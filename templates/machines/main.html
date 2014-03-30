@@ -1,0 +1,99 @@
+{% extends "../base.html" %}
+{% autoescape None %}
+{% block div %}
+<div id="main">
+        <a href="/addhost" class="bold"><img src="static/images/icon_add.gif"> 添加新主机</a>
+        <form action='/search' method='get'>
+        <p style='padding:10px'>
+        <select name='ops' style='width:auto;'>
+                <option value='1'>内网地址</option>
+                <option value='2'>外网地址</option>
+                <option value='3'>机房</option>
+                <option value='4'>内存</option>
+                <option value='5'>cpu</option>
+                <option value='6'>硬盘</option>
+                <option value='7'>机架</option>
+                <option value='8'>SN号</option>
+                <option value='9'>机型</option>
+                <option value='10'>操作系统</option>
+                <option value='11'>项目</option>
+                <option value='12'>状态</option>
+                <option value='13'>负责人</option>
+                <option value='14'>备注</option>
+                <option value='15'>修改人</option>
+        </select>
+        <input type='text' name='word' />
+        <input type='submit' class='button2' value='Go' />
+        </p>
+        </form>
+<table>
+        <tr>
+		<th width='3%'>标识</th>
+		<th width='9%%'>内网地址</th>
+		<th width='9%'>外网地址</th>
+		<th width='4%'>机房</th>
+        <th width='4%'>内存</th>
+   		<th width='4%'>cpu</th>
+        <th width='4%'>硬盘</th>
+   		<th width='8%'>机架</th>
+        <th width='8%'>SN号</th>
+        <th width='8%'>机型</th>
+        <th width='8%'>操作系统</th>
+		<th width='6%'>项目</th>
+		<th width='5%'>状态</th>
+		<th width='7%'>负责人</th>
+		<th>备注</th>
+        <th width='5%'>操作</th>
+	</tr>
+    {% if server_length-page*100 > 0 and server_length/100+2 > page > 0 %}
+    {% for item in range(page*100-99,page*100+1) %}
+	<tr>
+		<td>{{item}}</td>
+		<td>{{server_data[item]["server_ip"]}}</td>
+		<td>{{server_data[item]["public_ip"]}}</td>
+		<td>{{server_data[item]["idc_name"]}}</td>
+		<td>{{server_data[item]["mem_size"]}}</td>
+		<td>{{server_data[item]["cpu_num"]}}</td>
+        <td>{{server_data[item]["disk_size"]}}</td>
+		<td>{{server_data[item]["server_rack"]}}</td>
+		<td>{{server_data[item]["sn"]}}</td>
+		<td>{{server_data[item]["server_type"]}}</td>
+		<td>{{server_data[item]["os"]}}</td>
+		<td>{{server_data[item]["project_name"]}}</td>
+        <td>{{server_data[item]["server_status"]}}</td>
+        <td>{{server_data[item]["contact"]["contact_name"]}}</td>
+        <td>{{server_data[item]["comment"]}}</td>
+        <td><a href='/mhost?action=modify&mid={{server_data[item]["machine_id"]}}'><img src='static/images/modify.png' alt='修改' title='修改' /></a> <a onClick="return confirm('注意：确定要删除此条目吗？')" href='/mhost?action=delete&mid={{server_data[item]["machine_id"]}}'><img src='static/images/remove.png' alt='删除' title='删除' /></a></td>
+	</tr>
+    {% end %}
+    {% end %}
+    {% if 100 > page*100-server_length > 0 and server_length/100+2 > page > 0 %}
+    {% for item in range(page*100-99,server_length+1) %}
+	<tr>
+		<td>{{item}}</td>
+		<td>{{server_data[item]["server_ip"]}}</td>
+		<td>{{server_data[item]["public_ip"]}}</td>
+		<td>{{server_data[item]["idc_name"]}}</td>
+		<td>{{server_data[item]["mem_size"]}}</td>
+		<td>{{server_data[item]["cpu_num"]}}</td>
+        <td>{{server_data[item]["disk_size"]}}</td>
+		<td>{{server_data[item]["server_rack"]}}</td>
+		<td>{{server_data[item]["sn"]}}</td>
+		<td>{{server_data[item]["server_type"]}}</td>
+		<td>{{server_data[item]["os"]}}</td>
+		<td>{{server_data[item]["project_name"]}}</td>
+        <td>{{server_data[item]["server_status"]}}</td>
+        <td>{{server_data[item]["contact"]["contact_name"]}}</td>
+        <td>{{server_data[item]["comment"]}}</td>
+        <td><a href='/mhost?action=modify&mid={{server_data[item]["machine_id"]}}'><img src='static/images/modify.png' alt='修改' title='修改' /></a> <a onClick="return confirm('注意：确定要删除此条目吗？')" href='/mhost?action=delete&mid={{server_data[item]["machine_id"]}}'><img src='static/images/remove.png' alt='删除' title='删除' /></a></td>
+	</tr>
+    {% end %}
+    {% end %}
+</table>
+<hr />
+
+<div id="page_nav">
+共 <b>{{server_length}}</b>条记录 &nbsp;<b>当前页: {{page}}  所有页：</b>{% for p in range(1,len(server_data)/100+2) %}<a href="/?page={{p}}" >{{p}} </a>{% end %}&nbsp;
+</div>
+</div>
+{% end %}

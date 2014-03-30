@@ -1,0 +1,44 @@
+$def with (hosts,pages,page,page_nav)
+<div id="main">
+<table id="senfe">
+	<tr>
+		<th width='10%'>主机标识</th>
+		<th width='6%' style="color:red">城市</th>
+		<th width='10%'>地址一</th>
+		<th width='5%'>端口</th>
+		<th width='10%'>项目</th>
+		<th width='5%'>内存</th>
+		<th width='8%'>带宽</th>
+		<th width='10%'>操作系统</th>
+		<th width='15%'>用途</th>
+		<th width='6%'>状态</th>
+		<th style="color:red">IDC</th>
+	</tr>
+$var i: 0
+$for h in hosts:
+	$var i: ${int(self.i) + 1}
+	<tr class="
+	$if int(self.i) % 2:
+		tr-row
+	">
+		<td><a href='/mhosts?action=vh&hid=$h.hid'>$h.hostname</a></td>
+		<td style="color:red;">$h.city</td>
+		<td>$h.addr1_ip</td>
+		<td>$h.port</td>
+		<td>$h.project</td>
+		<td>$h.memory GB</td>
+		<td>$h.bandwidth</td>
+		<td>$h.os</td>
+		<td>$h.uses</td>
+		<td>$h.status</td>
+		<td style="color:red">$h.idc</td>
+	</tr>
+</table>
+<hr />
+
+<div id="page_nav">
+$:page_nav
+</div>
+</div>
+<script type="text/javascript" src="static/js/senfefooter.js"></script>
+

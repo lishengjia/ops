@@ -1,0 +1,22 @@
+$def with (project_info)
+<div id="content">
+<form action='' method="post">
+<table>
+	<tr>
+		<td colspan=2><h1><b>更新项目信息</b></h1></td>
+	</tr>
+	<tr>
+		<td><label>项目名称</label></td>
+		<td><input type="text" name="project" value="$project_info.project" /></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle"><label>备<span style="color:#ffffff;">☺ </span>注</label></td>
+		<td><textarea name='other'>$project_info.other</textarea></td>
+	</tr>
+	<tr>
+		<td colspan=2 class='c'><input style="width:60px" class='button' type="submit" name="modify_project" value="更 新" /> </td>
+	</tr>
+</table>
+</form>
+
+</div>

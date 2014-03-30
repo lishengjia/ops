@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> $sysconf['name'] | 登录</title>
+<link rel="stylesheet" href="static/css/login/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="static/css/login/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="static/css/login/invalid.css" type="text/css" media="screen" />	
+</head>
+<body id="login">
+    <div id="login-wrapper" class="png_bg">
+	    <div id="login-top">
+		    <span style="font-weight:bold; font-size:30px;padding-right:50px;">$sysconf['name']</span>
+		</div>
+			
+		<div id="login-content">
+		    <form action="" method="post">
+			    <p>
+				    <label>用户名</label>
+				    <input id="username" class="text-input" name="username" type="text" value=""/>
+				</p>
+				<div class="clear"></div>
+				<p>
+				<label>口 令</label>
+                <input class="text-input" name="password" type="password" />
+				</p>
+				<div class="clear"></div>
+				<div class="clear"></div>
+				<p style="text-align: center;">
+				    <input class="button" type="submit" value="登录" />
+				</p>
+			</form>
+		</div> <!-- End #login-content -->
+			
+	</div> <!-- End #login-wrapper -->
+</body>
+</html>

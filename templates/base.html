@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<title>{{name['title']}}</title>
+<link rel="stylesheet" href="static/css/all.css" type="text/css" media="screen" />
+<script type="text/javascript" src="static/js/my97date/WdatePicker.js"></script>
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/scrolltop.js"></script>
+<script type="text/javascript" src="static/js/float.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="head">
+        <div id='top1'><span class='l'>{{name['name']}}</span></div>
+        <div id='nav'>
+            <ul>
+                <li><a href='/index'>首页</a></li>
+                <li><a href='/'>资产管理</a></li>
+                <li><a href='/projectlist'>项目分布</a></li>
+                <li><a href='/citylist'>城市分布</a></li>
+                <li><a href='/idclist'>IDC分布</a></li>
+                <li><a href='/userlist'>用户列表</a></li>
+                <li>
+                    &nbsp;快捷操作<span style="font-size:12px">↓</span>
+                    <ul style="border-radius: 0px 0px 6px 6px !important; z-index: 0;">
+                        <li><a href="/muser?action=mu&uid=26">修改密码</a></li>
+                        <li><a href="/main?action=lastupdate">最近更新</a></li>
+                        <li><a href='/export'>导出数据</a></li>
+                        <li><a href='/register'>添加用户</a></li>
+                        <li><a href='/history'>删除记录</a></li>
+                        <li><a href='/addhost'>添加新主机</a></li>
+                    </ul>
+                </li>
+                <li class="r">您好：<a href="/muser?action=mu&uid=26">lee</a> | <a href='/logout'> 退出</a></li>
+            </ul>
+        </div>
+    </div>
+    {% block div %}
+    {% end %}
+</div>
+</body>
+</html>

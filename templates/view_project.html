@@ -1,0 +1,19 @@
+$def with (project_info)
+<div id="content">
+<form action='' method="">
+<table>
+	<tr>
+		<td colspan=2><h1><b>项目信息</b></h1></td>
+	</tr>
+	<tr>
+		<td><label>项目名称</label></td>
+		<td><input type="text" name="project" value="$project_info.project" readonly=true/></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle"><label>备<span style="color:#ffffff;">☺ </span>注</label></td>
+		<td><textarea name='other' readonly=true>$project_info.other</textarea></td>
+	</tr>
+</table>
+</form>
+
+</div>

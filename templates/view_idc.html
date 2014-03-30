@@ -1,0 +1,39 @@
+$def with (idc,city_list)
+<div id="content">
+<form action='' method="">
+<table>
+	<tr>
+		<td colspan=2><h1><b>IDC信息</b></h1></td>
+	</tr>
+	<tr>
+		<td><label>I D C</label></td>
+		<td><input type="text" name="idcname" value='$idc.idcname' readonly=true/></td>
+	</tr>
+	<tr>
+		<td><label>所在城市</label></td>
+		<td>
+			<select name="city">
+			$for c in city_list:
+				$if idc.city == c.cid:
+					<option value='$c.cid' selected="select">$c.city</option>
+				$else:
+					<option value='$c.cid'>$c.city</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td><label>联系方式</label></td>
+		<td><input type="text" name="contact" value='$idc.contact' readonly=true/></td>
+	</tr>
+	<tr>
+		<td><label>合作时间</label></td>
+		<td><input type="text" name="hztime" value='$idc.hztime' readonly=true /></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle"><label>备<span style="color:#ffffff;">☺ </span>注</label></td>
+		<td><textarea name='other' readonly=true>$idc.other</textarea></td>
+	</tr>
+</table>
+</form>
+<div>
+

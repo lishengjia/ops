@@ -1,0 +1,102 @@
+{% extends "../base.html" %}
+{% block div %}
+<div id="content" style="height:100% !important;">
+<form action='/mhost' method="post">
+<table>
+        <tr>
+                <td colspan=2><h1><b>修改服务器信息</b></h1></td>
+        </tr>
+        <tr>
+                <td><label>内网地址</label></td>
+                <td><textarea name="server_ip" rows="2" cols="20">{{host_data[1]["server_ip"]}}</textarea><span class="zhushi">*此项为比填项</span></td>
+        </tr>
+        <tr>
+                <td><label>外网地址</label></td>
+                <td><textarea name="public_ip" rows="2" cols="20">{{host_data[1]["public_ip"]}}</textarea></td>
+        </tr>
+        <tr>
+                <td><label>机房</label></td>
+                <td><select name='idc_name'>
+                    {% for idc in select_data["idc"].keys() %}
+                    {% if select_data["idc"][idc] == host_data[1]["idc_name"] %}
+                    <option value={{idc}} selected="selected">{{host_data[1]["idc_name"]}}</option>
+                    {% end %}
+                    <option value={{idc}}>{{select_data["idc"][idc]}}</option>
+                    {% end %}
+                </select>
+                </td>
+        </tr>
+        <tr>
+                <td><label>内存</label></td>
+                <td><input type="text" name="mem_size" value='{{host_data[1]["mem_size"]}}' /></td>
+        </tr>
+        <tr>
+                <td><label>硬盘</label></td>
+                <td><input type="text" name="disk_size" value='{{host_data[1]["disk_size"]}}' /></td>
+        </tr>
+        <tr>
+                <td><label>cpu</label></td>
+                <td><input type="text" name="cpu_num" value='{{host_data[1]["cpu_num"]}}' /></td>
+        </tr>
+        <tr>
+                <td><label>机架</label></td>
+                <td><input type="text" name="server_rack" value='{{host_data[1]["server_rack"]}}' /></td>
+        </tr>
+        <tr>
+                <td><label>SN号</label></td>
+                <td><input type="text" name="sn" value='{{host_data[1]["sn"]}}' /></td>
+        </tr>
+        <tr>
+                <td><label>机型</label></td>
+                <td><input type="text" name="server_type" value='{{host_data[1]["server_type"]}}' /></td>
+        </tr>
+        <tr>
+                <td><label>操作系统</label></td>
+                <td><input type="text" name="os" value='{{host_data[1]["os"]}}' /></td>
+        </tr>
+        <tr>
+                <td><label>项目</label></td>
+                <td><select name='project_name'>
+                    {% for project in select_data["project"].keys() %}
+                    {% if select_data["project"][project] == host_data[1]["project_name"] %}
+                    <option value={{project}} selected="selected">{{host_data[1]["project_name"]}}</option>
+                    {% end %}
+                    <option value={{project}}>{{select_data["project"][project]}}</option>
+                    {% end %}
+                </select>
+                </td>
+        </tr>
+        <tr>
+                <td><label>状态</label></td>
+                <td>
+                <select name='server_select_status'>
+                    {% for status in select_data_status %}
+                    {% if status == host_data[1]["server_status"] %}
+                    <option value={{idc}} selected="selected">{{host_data[1]["server_status"]}}</option>
+                    {% end %}
+                    <option value={{status}}>{{status}}</option>
+                    {% end %}
+                </select>
+                <input type="text" name="server_status" />
+                </td>
+        </tr>
+        <tr>
+                <td><label>负责人</label></td>
+                <td><select name='server_contact'>
+                    {% for contact in select_data["contact"].keys() %}
+                    <option value={{contact}}>{{select_data["contact"][contact]}}</option>
+                    {% end %}
+                </select>
+                </td>
+        </tr>
+        <tr>
+                <td style="vertical-align: middle"><label>备注</label></td>
+                <td><textarea name="comment" rows="2" cols="20">{{host_data[1]["comment"]}}</textarea></td>
+        </tr>
+        <tr>
+                <td colspan=2 class='c'><a href='/mhost?action=modify&mid={{host_data[1]["machine_id"]}}'><input type="submit"  style="width:60px;" class='button' name="add_host" value="修 改" /></a></td>
+        </tr>
+</table>
+</form>
+</div>
+{% end %}

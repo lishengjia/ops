@@ -1,0 +1,23 @@
+$def with (city_info)
+<div id="content">
+<form action='' method="post">
+<table>
+	<tr>
+		<td colspan=2><h1>更新城市信息</h1></td>
+	</tr>
+	<tr>
+		<td><label>城 市</label></td>
+		<td><input type="text" name="city" value='$city_info.city' /></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle"><label>备 注</label></td>
+		<td><textarea name='other'>$city_info.other</textarea></td>
+		<input style='display:none' type="text" name='cid' value='$city_info.cid'>
+	</tr>
+	<tr>
+		<td colspan=2 class='c'><input style="width:60px" class='button' type="submit" name="add_city" value="更 新" /> </td>
+	</tr>
+
+</table>
+</form>
+<div>

@@ -1,0 +1,72 @@
+#coding:utf-8
+
+import tornado.ioloop
+import tornado.web
+
+import settings
+from modules.machines.mysql_opertation import AllMachineInfo
+from modules.machines.data_manage import DataManage
+from modules.machines.check import Check
+
+
+class MachineList(tornado.web.RequestHandler):
+    def get(self):
+        server_data = AllMachineInfo().machine_list
+        server_data_handled = DataManage.manage_machine_list(server_data)
+        server_length = len(server_data_handled)
+        page = self.get_argument("page", default="1")
+        self.render('machines/main.html', name=settings.template_variables, server_data=server_data_handled,
+                    server_length=server_length, page=int(page))
+
+
+class AddHost(tornado.web.RequestHandler):
+    def get(self):
+        select_data = AllMachineInfo().add_host_select
+        select_data_handled, status_handled = DataManage.manage_add_host_select(select_data)
+        self.render('machines/add_host.html', name=settings.template_variables, select_data=select_data_handled,
+                    select_data_status=status_handled)
+
+    def post(self, *args, **kwargs):
+        data_dic = dict()
+        data_list = settings.ADD_HOST_LIST
+        for name in data_list:
+            data_dic[name] = self.get_argument(name)
+        server_select = self.get_argument("server_select_status")
+        if data_dic["server_status"].strip() == '':
+            data_dic["server_status"] = server_select
+        result = Check.host_check(data_dic, True)
+        if result == "ok":
+            AllMachineInfo.add_host(data_dic)
+            self.write("<script language='javascript'>alert('添加完成');window.location.href='/addhost';</script>")
+        else:
+            self.write(result)
+
+
+class ModifyHost(tornado.web.RequestHandler):
+    def get(self, *args, **kwargs):
+        action = self.get_argument('action')
+        machine_id = self.get_argument('mid')
+        if action == 'modify':
+            host_data = AllMachineInfo.modify_host(machine_id)
+            host_data_handled = DataManage.manage_machine_list(host_data)
+            select_data = AllMachineInfo().add_host_select
+            select_data_handled, status_handled = DataManage.manage_add_host_select(select_data)
+            self.render('machines/modify_host.html', name=settings.template_variables, select_data=select_data_handled,
+                        select_data_status=status_handled, host_data=host_data_handled)
+        elif action == 'delete':
+            print 'ok'
+
+    def post(self, *args, **kwargs):
+        data_dic = dict()
+        data_list = settings.ADD_HOST_LIST
+        for name in data_list:
+            data_dic[name] = self.get_argument(name)
+        server_select = self.get_argument("server_select_status")
+        if data_dic["server_status"].strip() == '':
+            data_dic["server_status"] = server_select
+        result = Check.host_check(data_dic, False)
+        if result == "ok":
+            AllMachineInfo.modify_host_update(result)
+            self.write("<script language='javascript'>alert('修改完成');window.location.href='/';</script>")
+        else:
+            self.write(result)

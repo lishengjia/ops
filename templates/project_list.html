@@ -1,0 +1,23 @@
+$def with (project_info)
+<div id="content" class='center'>
+<form action='' method="post">
+<table>
+	<tr>
+		<th colspan=4 align=center><h1>项目分布概况</h1></th>
+	</tr>
+	<tr>
+		<th>项目名称</th>
+		<th>节点数</th>
+		<th>服务器数量</th>
+	</tr>
+$for p in project_info:
+	<tr>
+		<span style="display:none"><input type='text' name='pid' value="$p[0]" /></span>
+		<td><a href='/mproject?action=vp&pid=$p[0]'>$p[1]</a></td>
+		<td><a href="/projectidclist?project=$p[0]">$p[2]</a></td>
+		<td><a href='/projectlisthost?project=$p[0]&hc=$p[3]'>$p[3]</a></td>
+	</tr>
+
+</table>
+</form>
+<div>

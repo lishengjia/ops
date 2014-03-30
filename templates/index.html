@@ -1,0 +1,32 @@
+$def with (conf,sys_overview,status_overview)
+
+<div id="content">
+<table>
+<tr>
+<th colspan=2>系统概况</th>
+</tr>
+<tr><td>
+<b>服务器分布：</b> 共 <a href='/main'><b>$sys_overview['host']</b></a> 台设备，分布于 <a href='/citylist'><b>$sys_overview['city']</b></a> 个城市，<a href='/idclist'><b>$sys_overview['idc']</b></a> 个IDC节点, <a href="/projectlist"><b>$sys_overview['project']</b></a> 个项目。
+</td></tr>
+<tr><td>
+<b>服务器状态：</b>
+$for s in status_overview:
+	$s['status']：<a href="/search?ops=6&word=$s['sid']"><b>$s['total']</b></a>&nbsp;
+</td></tr>
+</td></tr>
+</table>
+$if session.privilege >= 2:
+	<table>
+	<tr>
+	<th colspan=2>系统设置</th>
+	</tr>
+	<tr><td>
+	<form action='' method="post">
+	<p>系统名称：<input type="text" name="name" value="$conf['name']" /> <span style="color:red">* 此项更新后，须重启系统进程,方可生效.</span></p>
+	<p>分页页数：<input type="text" name="page" value="$conf['page']" /></p>
+	<p><input type="submit" name="sysconf" class="button2" value="设置" /></p>
+	</td></tr>
+	</table>
+	</form>
+
+<div>
