@@ -26,7 +26,7 @@
       <file leaf-file-name="mysql_opertation.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/machines/mysql_opertation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="40" selection-start="2935" selection-end="2935" vertical-scroll-proportion="0.0" vertical-offset="1165" max-vertical-offset="1577">
+            <state line="81" column="67" selection-start="3801" selection-end="3801" vertical-scroll-proportion="0.0" vertical-offset="1260" max-vertical-offset="1710">
               <folding>
                 <element signature="e#33#48#0" expanded="true" />
               </folding>
@@ -46,9 +46,21 @@
       <file leaf-file-name="machines.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/handlers/machines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="0" selection-start="2484" selection-end="2484" vertical-scroll-proportion="0.15079366" vertical-offset="1026" max-vertical-offset="1482">
+            <state line="59" column="54" selection-start="2620" selection-end="2620" vertical-scroll-proportion="0.22087379" vertical-offset="1030" max-vertical-offset="1539">
               <folding>
                 <element signature="e#15#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/machines/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="87" column="268" selection-start="3914" selection-end="3914" vertical-scroll-proportion="-2.1785715" vertical-offset="1592" max-vertical-offset="1976">
+              <folding>
+                <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#p#0;n#form#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,20 +69,8 @@
       <file leaf-file-name="check.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/machines/check.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="3" selection-start="15" selection-end="17" vertical-scroll-proportion="-0.5588235" vertical-offset="0" max-vertical-offset="608">
+            <state line="11" column="108" selection-start="389" selection-end="472" vertical-scroll-proportion="-6.147059" vertical-offset="0" max-vertical-offset="608">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/machines/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="79" selection-start="3658" selection-end="3729" vertical-scroll-proportion="-7.142857" vertical-offset="1453" max-vertical-offset="1976">
-              <folding>
-                <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#p#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -98,19 +98,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="16" column="52" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modify_host.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/machines/modify_host.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="13" selection-start="4357" selection-end="4357" vertical-scroll-proportion="-6.928571" vertical-offset="1649" max-vertical-offset="2033">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#14;n#table#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#a#0;n#td#0;n#tr#15;n#table#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -759,13 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/applications.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="28" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="266">
@@ -780,33 +760,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/machines/check.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="3" selection-start="15" selection-end="17" vertical-scroll-proportion="-0.5588235" vertical-offset="0" max-vertical-offset="608">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="52" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/machines/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="79" selection-start="3658" selection-end="3729" vertical-scroll-proportion="-7.142857" vertical-offset="1453" max-vertical-offset="1976">
-          <folding>
-            <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#p#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/machines/data_manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="36" selection-start="2223" selection-end="2223" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1368">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
           <folding />
         </state>
       </provider>
@@ -820,27 +783,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/machines/modify_host.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="13" selection-start="4357" selection-end="4357" vertical-scroll-proportion="-6.928571" vertical-offset="1649" max-vertical-offset="2033">
+        <state line="91" column="25" selection-start="4135" selection-end="4135" vertical-scroll-proportion="0.075520836" vertical-offset="1700" max-vertical-offset="2090">
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#14;n#table#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#a#0;n#td#0;n#tr#15;n#table#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#0;n#tr#15;n#table#0;n#form#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="52" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/machines/mysql_opertation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="40" selection-start="2935" selection-end="2935" vertical-scroll-proportion="0.0" vertical-offset="1165" max-vertical-offset="1577">
+        <state line="81" column="67" selection-start="3801" selection-end="3801" vertical-scroll-proportion="0.0" vertical-offset="1260" max-vertical-offset="1710">
           <folding>
             <element signature="e#33#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modules/machines/check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="108" selection-start="389" selection-end="472" vertical-scroll-proportion="-6.147059" vertical-offset="0" max-vertical-offset="608">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/machines/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="268" selection-start="3914" selection-end="3914" vertical-scroll-proportion="-2.1785715" vertical-offset="1592" max-vertical-offset="1976">
+          <folding>
+            <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#p#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/handlers/machines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="2484" selection-end="2484" vertical-scroll-proportion="0.15079366" vertical-offset="1026" max-vertical-offset="1482">
+        <state line="59" column="54" selection-start="2620" selection-end="2620" vertical-scroll-proportion="0.22087379" vertical-offset="1030" max-vertical-offset="1539">
           <folding>
             <element signature="e#15#36#0" expanded="true" />
           </folding>

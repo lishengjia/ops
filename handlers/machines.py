@@ -43,18 +43,21 @@ class AddHost(tornado.web.RequestHandler):
 
 
 class ModifyHost(tornado.web.RequestHandler):
+    machine_id = ""
+
     def get(self, *args, **kwargs):
         action = self.get_argument('action')
-        machine_id = self.get_argument('mid')
+        ModifyHost.machine_id = self.get_argument('mid')
         if action == 'modify':
-            host_data = AllMachineInfo.modify_host(machine_id)
+            host_data = AllMachineInfo.modify_host(ModifyHost.machine_id)
             host_data_handled = DataManage.manage_machine_list(host_data)
             select_data = AllMachineInfo().add_host_select
             select_data_handled, status_handled = DataManage.manage_add_host_select(select_data)
             self.render('machines/modify_host.html', name=settings.template_variables, select_data=select_data_handled,
                         select_data_status=status_handled, host_data=host_data_handled)
         elif action == 'delete':
-            print 'ok'
+            AllMachineInfo.delete_host(ModifyHost.machine_id)
+            self.write("<script language='javascript'>window.location.href='/';</script>")
 
     def post(self, *args, **kwargs):
         data_dic = dict()
@@ -66,7 +69,7 @@ class ModifyHost(tornado.web.RequestHandler):
             data_dic["server_status"] = server_select
         result = Check.host_check(data_dic, False)
         if result == "ok":
-            AllMachineInfo.modify_host_update(result)
+            AllMachineInfo.modify_host_update(data_dic, ModifyHost.machine_id)
             self.write("<script language='javascript'>alert('修改完成');window.location.href='/';</script>")
         else:
             self.write(result)

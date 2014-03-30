@@ -84,6 +84,9 @@
                 <td><label>负责人</label></td>
                 <td><select name='server_contact'>
                     {% for contact in select_data["contact"].keys() %}
+                    {% if select_data["contact"][contact] == host_data[1]["contact"]["contact_name"] %}
+                    <option value={{contact}} selected="selected">{{host_data[1]["contact"]["contact_name"]}}</option>
+                    {% end %}
                     <option value={{contact}}>{{select_data["contact"][contact]}}</option>
                     {% end %}
                 </select>
@@ -94,7 +97,7 @@
                 <td><textarea name="comment" rows="2" cols="20">{{host_data[1]["comment"]}}</textarea></td>
         </tr>
         <tr>
-                <td colspan=2 class='c'><a href='/mhost?action=modify&mid={{host_data[1]["machine_id"]}}'><input type="submit"  style="width:60px;" class='button' name="add_host" value="修 改" /></a></td>
+                <td colspan=2 class='c'><input type="submit"  style="width:60px;" class='button' name="add_host" value="修 改" /></td>
         </tr>
 </table>
 </form>

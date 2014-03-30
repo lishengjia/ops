@@ -68,10 +68,17 @@ class AllMachineInfo(object):
         db = MysqlServer(settings.DATABASES)
         sql = "update zc_machine set serverip='%s', publicip='%s', rid='%d', memsize='%s', cpunum='%s', \
          disksize='%s', serverrack='%s', sn='%s', stype='%s', os='%s', service='%d', mstatus='%s', ccid='%d', \
-          comment where mid='%d'"  % \
+          comment='%s' where mid='%d' " % \
         (result["server_ip"], result["public_ip"], int(result["idc_name"]), result["mem_size"],
          result["cpu_num"], result["disk_size"], result["server_rack"], result["sn"],
          result["server_type"], result["os"], int(result["project_name"]), result["server_status"],
-         int(result["server_contact"]), result['comment'], result[''])
+         int(result["server_contact"]), result['comment'], int(mid))
+        db.execute_sql(sql)
+        db.close()
+
+    @staticmethod
+    def delete_host(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "delete from zc_machine where mid='%d'" % int(result)
         db.execute_sql(sql)
         db.close()
