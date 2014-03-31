@@ -3,26 +3,13 @@
 {% block div %}
 <div id="main">
         <a href="/addhost" class="bold"><img src="static/images/icon_add.gif"> 添加新主机</a>
-        <form action='/search' method='get'>
+        <a href="/shosts?search=high" class="bold"> 高级搜索</a>
+        <form action='/shosts' method='get'>
         <p style='padding:10px'>
-        <select name='ops' style='width:auto;'>
-                <option value='1'>内网地址</option>
-                <option value='2'>外网地址</option>
-                <option value='3'>机房</option>
-                <option value='4'>内存</option>
-                <option value='5'>cpu</option>
-                <option value='6'>硬盘</option>
-                <option value='7'>机架</option>
-                <option value='8'>SN号</option>
-                <option value='9'>机型</option>
-                <option value='10'>操作系统</option>
-                <option value='11'>项目</option>
-                <option value='12'>状态</option>
-                <option value='13'>负责人</option>
-                <option value='14'>备注</option>
-                <option value='15'>修改人</option>
+        <select name='search' style='width:auto;'>
+                <option value='server_ip'>内网地址</option>
         </select>
-        <input type='text' name='word' />
+        <input type='text' name='search_word'/>
         <input type='submit' class='button2' value='Go' />
         </p>
         </form>
@@ -63,7 +50,7 @@
         <td>{{server_data[item]["server_status"]}}</td>
         <td>{{server_data[item]["contact"]["contact_name"]}}</td>
         <td>{{server_data[item]["comment"]}}</td>
-        <td><a href='/mhost?action=modify&mid={{server_data[item]["machine_id"]}}'><img src='static/images/modify.png' alt='修改' title='修改' /></a> <a onClick="return confirm('注意：确定要删除此条目吗？')" href='/mhost?action=delete&mid={{server_data[item]["machine_id"]}}'><img src='static/images/remove.png' alt='删除' title='删除' /></a></td>
+        <td><a href='/mhost?action=modify&mid={{server_data[item]["machine_id"]}}'><img src='static/images/modify.png' alt='修改' title='修改' /></a> <a onClick="return confirm('注意：确定要删除此条目吗？')" href='/mhost?action=delete&mid={{server_data[item]["machine_id"]}}&page={{page}}'><img src='static/images/remove.png' alt='删除' title='删除' /></a></td>
 	</tr>
     {% end %}
     {% end %}
@@ -85,7 +72,7 @@
         <td>{{server_data[item]["server_status"]}}</td>
         <td>{{server_data[item]["contact"]["contact_name"]}}</td>
         <td>{{server_data[item]["comment"]}}</td>
-        <td><a href='/mhost?action=modify&mid={{server_data[item]["machine_id"]}}'><img src='static/images/modify.png' alt='修改' title='修改' /></a> <a onClick="return confirm('注意：确定要删除此条目吗？')" href='/mhost?action=delete&mid={{server_data[item]["machine_id"]}}'><img src='static/images/remove.png' alt='删除' title='删除' /></a></td>
+        <td><a href='/mhost?action=modify&mid={{server_data[item]["machine_id"]}}'><img src='static/images/modify.png' alt='修改' title='修改' /></a> <a onClick="return confirm('注意：确定要删除此条目吗？')" href='/mhost?action=delete&mid={{server_data[item]["machine_id"]}}&page={{page}}'><img src='static/images/remove.png' alt='删除' title='删除' /></a></td>
 	</tr>
     {% end %}
     {% end %}

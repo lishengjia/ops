@@ -57,7 +57,9 @@ class ModifyHost(tornado.web.RequestHandler):
                         select_data_status=status_handled, host_data=host_data_handled)
         elif action == 'delete':
             AllMachineInfo.delete_host(ModifyHost.machine_id)
-            self.write("<script language='javascript'>window.location.href='/';</script>")
+            page = self.get_argument("page")
+            js_str = "<script language='javascript'>window.location.href='/?page=%s';</script>" % page
+            self.write(js_str)
 
     def post(self, *args, **kwargs):
         data_dic = dict()
@@ -73,3 +75,32 @@ class ModifyHost(tornado.web.RequestHandler):
             self.write("<script language='javascript'>alert('修改完成');window.location.href='/';</script>")
         else:
             self.write(result)
+
+
+class SearchHosts(tornado.web.RequestHandler):
+    def get(self, *args, **kwargs):
+        if self.get_argument('search') == 'server_ip':
+            search_word = self.get_argument('search_word')
+            server_data = AllMachineInfo.search_hosts_quick(search_word.strip())
+            server_data_handled = DataManage.manage_machine_list(server_data)
+            server_length = len(server_data_handled)
+            page = self.get_argument("page", default="1")
+            self.render('machines/main.html', name=settings.template_variables, server_data=server_data_handled,
+                        server_length=server_length, page=int(page))
+        elif self.get_argument('search') == 'high':
+            select_data = AllMachineInfo().add_host_select
+            select_data_handled, status_handled = DataManage.manage_add_host_select(select_data)
+            self.render('machines/search_hosts.html', name=settings.template_variables, select_data=select_data_handled,
+                        select_data_status=status_handled)
+
+    def post(self, *args, **kwargs):
+        data_dic = dict()
+        data_list = settings.ADD_HOST_LIST
+        for name in data_list:
+            data_dic[name] = self.get_argument(name)
+        server_data = AllMachineInfo.search_hosts(data_dic)
+        server_data_handled = DataManage.manage_machine_list(server_data)
+        server_length = len(server_data_handled)
+        page = self.get_argument("page", default="1")
+        self.render('machines/main.html', name=settings.template_variables, server_data=server_data_handled,
+                   server_length=server_length, page=int(page))

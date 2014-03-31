@@ -82,3 +82,31 @@ class AllMachineInfo(object):
         sql = "delete from zc_machine where mid='%d'" % int(result)
         db.execute_sql(sql)
         db.close()
+
+    @staticmethod
+    def search_hosts(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "select `serverip`,`publicip`,`idcname`,`memsize`,`cpunum`,`disksize`,`serverrack`,`sn`, \
+        `stype`,`os`,`sname`,`mstatus`,`cname`,`cinfo`,`comment`,zc_machine.`mid` from zc_machine left join \
+        zc_idc on zc_machine.rid = zc_idc.rid left join zc_service on zc_machine.service = zc_service.sid \
+        left join zc_contact on zc_machine.ccid = zc_contact.ccid where serverip like '%%%s%%' and publicip like \
+        '%%%s%%' and idcname like '%%%s%%' and memsize like '%%%s%%' and cpunum \
+        like '%%%s%%' and disksize like '%%%s%%' and serverrack like '%%%s%%' and sn like '%%%s%%' and stype like \
+        '%%%s%%' and os like '%%%s%%' and sname like '%%%s%%' and mstatus like '%%%s%%' and cname like '%%%s%%' and \
+        comment like '%%%s%%'" % (result["server_ip"], result["public_ip"], result["idc_name"], result["mem_size"],
+        result["cpu_num"], result["disk_size"], result["server_rack"], result["sn"], result["server_type"], result["os"],
+        result["project_name"], result["server_status"], result["server_contact"], result['comment'])
+        result = db.run_sql(sql)
+        db.close()
+        return result
+
+    @staticmethod
+    def search_hosts_quick(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "select `serverip`,`publicip`,`idcname`,`memsize`,`cpunum`,`disksize`,`serverrack`,`sn`, \
+        `stype`,`os`,`sname`,`mstatus`,`cname`,`cinfo`,`comment`,zc_machine.`mid` from zc_machine left join \
+        zc_idc on zc_machine.rid = zc_idc.rid left join zc_service on zc_machine.service = zc_service.sid \
+        left join zc_contact on zc_machine.ccid = zc_contact.ccid where serverip like '%%%s%%'" % result
+        result = db.run_sql(sql)
+        db.close()
+        return result
