@@ -1,0 +1,26 @@
+{% extends "../base.html" %}
+{% block div %}
+<div id="content" style="height:160% !important;">
+<table>
+        <tr>
+                <td colspan=2><h1><b>资产分布</b></h1></td>
+        </tr>
+        <tr>
+                <th>设备总数</th>
+                <td>{{data_nums}}</td>
+        </tr>
+        <tr>
+                <th>项目名称</th>
+                <td>机器数量</td>
+        </tr>
+        {% for project_id in data_distribute %}
+        {% for project_name in data_distribute[project_id] %}
+        <tr>
+                <th>{{project_name}}</th>
+                <td><a href="/shosts?search=distribute&project_name={{project_id}}">{{data_distribute[project_id][project_name]}}</a></td>
+        </tr>
+        {% end %}
+        {% end %}
+</table>
+</div>
+{% end %}

@@ -92,6 +92,14 @@ class SearchHosts(tornado.web.RequestHandler):
             select_data_handled, status_handled = DataManage.manage_add_host_select(select_data)
             self.render('machines/search_hosts.html', name=settings.template_variables, select_data=select_data_handled,
                         select_data_status=status_handled)
+        elif self.get_argument('search') == 'distribute':
+            project_name = self.get_argument('project_name')
+            server_data = AllMachineInfo.distribute_host_search(project_name)
+            server_data_handled = DataManage.manage_machine_list(server_data)
+            server_length = len(server_data_handled)
+            page = self.get_argument("page", default="1")
+            self.render('machines/main.html', name=settings.template_variables, server_data=server_data_handled,
+                        server_length=server_length, page=int(page))
 
     def post(self, *args, **kwargs):
         data_dic = dict()
@@ -103,4 +111,13 @@ class SearchHosts(tornado.web.RequestHandler):
         server_length = len(server_data_handled)
         page = self.get_argument("page", default="1")
         self.render('machines/main.html', name=settings.template_variables, server_data=server_data_handled,
-                   server_length=server_length, page=int(page))
+                    server_length=server_length, page=int(page))
+
+
+class HostDistribute(tornado.web.RequestHandler):
+    def get(self, *args, **kwargs):
+        data_distribute, data_nums = AllMachineInfo().distribute_host
+        data_distribute_handled = DataManage.manage_host_distribute(data_distribute)
+        print data_distribute_handled
+        self.render("machines/host_distribute.html", name=settings.template_variables,
+                    data_distribute=data_distribute_handled,data_nums=data_nums[0][0])

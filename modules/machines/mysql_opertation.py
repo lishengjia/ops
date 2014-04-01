@@ -110,3 +110,25 @@ class AllMachineInfo(object):
         result = db.run_sql(sql)
         db.close()
         return result
+
+    @property
+    def distribute_host(self):
+        db = MysqlServer(settings.DATABASES)
+        sql = "select zc_service.`sid`, zc_service.`sname`, count(*) from zc_machine left join zc_service on \
+        zc_machine.service = zc_service.sid group by service"
+        sql_count = "select count(*) from zc_machine"
+        result = db.run_sql(sql)
+        result_count = db.run_sql(sql_count)
+        db.close()
+        return result, result_count
+
+    @staticmethod
+    def distribute_host_search(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "select `serverip`,`publicip`,`idcname`,`memsize`,`cpunum`,`disksize`,`serverrack`,`sn`, \
+        `stype`,`os`,`sname`,`mstatus`,`cname`,`cinfo`,`comment`,zc_machine.`mid` from zc_machine left join \
+        zc_idc on zc_machine.rid = zc_idc.rid left join zc_service on zc_machine.service = zc_service.sid \
+        left join zc_contact on zc_machine.ccid = zc_contact.ccid where zc_machine.service = '%s'" % result
+        result = db.run_sql(sql)
+        db.close()
+        return result

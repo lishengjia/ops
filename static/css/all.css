@@ -383,28 +383,10 @@ form input,form textarea {
 }
 
 
-#customers
-  {
-  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-  width:100%;
-  border-collapse:collapse;
-  word-break:break-all;
-  }
-
-#customers td, #customers th
-  {
-  font-size:0.9em;
-  border:1px solid gray;
-  padding:3px 7px 2px 7px;
-  }
-
-#customers th
-  {
-  font-size:1.1em;
-  text-align:left;
-  padding-top:4px;
-  padding-bottom:4px;
-  background-color:#EAF2D3;
-  color:black;
-  }
-
+#main .modify {
+    display: inline-block;
+    float: right;
+    height:44px;
+    line-height:44px;
+    padding-right: 10px;
+}

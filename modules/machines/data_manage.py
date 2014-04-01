@@ -60,6 +60,12 @@ class DataManage(object):
                 status_list.append(result[3][num][0])
         return tmp_dict, status_list
 
+    @staticmethod
+    def manage_host_distribute(result):
+        tmp_dict = {}
+        for line in result:
+            tmp_dict[line[0]] = {line[1]: line[2]}
+        return tmp_dict
 
 
 

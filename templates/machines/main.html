@@ -2,8 +2,11 @@
 {% autoescape None %}
 {% block div %}
 <div id="main">
-        <a href="/addhost" class="bold"><img src="static/images/icon_add.gif"> 添加新主机</a>
-        <a href="/shosts?search=high" class="bold"> 高级搜索</a>
+        <div class="modify">
+        <a href="/addhost" class="bold"><img src="static/images/icon_add.gif">添加新主机</a>
+        <a href="/shosts?search=high" class="bold">高级搜索</a>
+        <a href='/distribute' class="bold">资产分布</a>
+        </div>
         <form action='/shosts' method='get'>
         <p style='padding:10px'>
         <select name='search' style='width:auto;'>
