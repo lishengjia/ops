@@ -118,6 +118,5 @@ class HostDistribute(tornado.web.RequestHandler):
     def get(self, *args, **kwargs):
         data_distribute, data_nums = AllMachineInfo().distribute_host
         data_distribute_handled = DataManage.manage_host_distribute(data_distribute)
-        print data_distribute_handled
         self.render("machines/host_distribute.html", name=settings.template_variables,
                     data_distribute=data_distribute_handled,data_nums=data_nums[0][0])

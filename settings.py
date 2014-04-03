@@ -10,7 +10,7 @@ DATABASES = dict(
     DB='ops',
     USERNAME='root',
     PASSWORD='123456',
-    HOST='10.1.72.66',
+    HOST='127.0.0.1',
     PORT=3306,
 )
 
