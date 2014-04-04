@@ -132,3 +132,11 @@ class AllMachineInfo(object):
         result = db.run_sql(sql)
         db.close()
         return result
+
+    @staticmethod
+    def check_user_login(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "select `username`,`password` from zc_user where username='%s'" % result
+        result = db.run_sql(sql)
+        db.close()
+        return result

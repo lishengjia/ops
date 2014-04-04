@@ -1,7 +1,6 @@
 #coding:utf-8
-
-import tornado.ioloop
 import tornado.web
+from modules.machines.base import BaseHandler
 
 import settings
 from modules.machines.mysql_opertation import AllMachineInfo
@@ -9,7 +8,36 @@ from modules.machines.data_manage import DataManage
 from modules.machines.check import Check
 
 
-class MachineList(tornado.web.RequestHandler):
+class Login(BaseHandler):
+    origin_url = ""
+
+    def get(self, *args, **kwargs):
+        Login.origin_url = self.get_argument("next")
+        self.render("machines/login.html", login_strings=dict(username="Username", password="Password"))
+
+    def post(self, *args, **kwargs):
+        input_username = self.get_argument("username")
+        input_password = self.get_argument("password")
+        check_result = Check.login_check(input_username, input_password)
+        if check_result == "Invalid username":
+            self.render("machines/login.html", login_strings=dict(username="Invalid username", password="Password"))
+        elif check_result == "ok":
+            self.set_secure_cookie(settings.cookie_name, input_username)
+            self.redirect(Login.origin_url)
+        elif check_result == "Incorrect password":
+            self.render("machines/login.html", login_strings=dict(username="Username", password="Incorrect password"))
+        else:
+            self.redirect("/login?next=/")
+
+
+class Logout(BaseHandler):
+    def get(self, *args, **kwargs):
+        self.clear_cookie(settings.cookie_name)
+        self.redirect("/login?next=/")
+
+
+class MachineList(BaseHandler):
+    @tornado.web.authenticated
     def get(self):
         server_data = AllMachineInfo().machine_list
         server_data_handled = DataManage.manage_machine_list(server_data)
@@ -19,7 +47,8 @@ class MachineList(tornado.web.RequestHandler):
                     server_length=server_length, page=int(page))
 
 
-class AddHost(tornado.web.RequestHandler):
+class AddHost(BaseHandler):
+    @tornado.web.authenticated
     def get(self):
         select_data = AllMachineInfo().add_host_select
         select_data_handled, status_handled = DataManage.manage_add_host_select(select_data)
@@ -42,9 +71,10 @@ class AddHost(tornado.web.RequestHandler):
             self.write(result)
 
 
-class ModifyHost(tornado.web.RequestHandler):
+class ModifyHost(BaseHandler):
     machine_id = ""
 
+    @tornado.web.authenticated
     def get(self, *args, **kwargs):
         action = self.get_argument('action')
         ModifyHost.machine_id = self.get_argument('mid')
@@ -77,7 +107,8 @@ class ModifyHost(tornado.web.RequestHandler):
             self.write(result)
 
 
-class SearchHosts(tornado.web.RequestHandler):
+class SearchHosts(BaseHandler):
+    @tornado.web.authenticated
     def get(self, *args, **kwargs):
         if self.get_argument('search') == 'server_ip':
             search_word = self.get_argument('search_word')
@@ -114,7 +145,8 @@ class SearchHosts(tornado.web.RequestHandler):
                     server_length=server_length, page=int(page))
 
 
-class HostDistribute(tornado.web.RequestHandler):
+class HostDistribute(BaseHandler):
+    @tornado.web.authenticated
     def get(self, *args, **kwargs):
         data_distribute, data_nums = AllMachineInfo().distribute_host
         data_distribute_handled = DataManage.manage_host_distribute(data_distribute)

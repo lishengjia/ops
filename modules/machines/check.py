@@ -1,5 +1,6 @@
 #coding:utf-8
 from modules.machines.mysql_opertation import AllMachineInfo
+import hashlib
 
 
 class Check():
@@ -24,3 +25,17 @@ class Check():
                 return str_check_empty
             else:
                 return "ok"
+
+    @staticmethod
+    def login_check(input_username, input_password):
+        mysql_user_password = AllMachineInfo.check_user_login(input_username)
+        if mysql_user_password:
+            m = hashlib.md5()
+            m.update(input_password)
+            md5_input_password = m.hexdigest()
+            if mysql_user_password[0][1] == md5_input_password:
+                return "ok"
+            else:
+                return "Incorrect password"
+        else:
+            return "Invalid username"
