@@ -1,0 +1,35 @@
+{% extends "../base.html" %}
+{% block div %}
+
+<div id="content"  style="width:80% !important;">
+<form action="/usermodify" method="post">
+<table>
+        <tr>
+		       <th colspan=6 align=h1>OPS用户管理</th>
+	    </tr>
+        {% for uid in user_data %}
+        <tr>
+            <th width="10%">用户标识</th>
+            <td>{{uid}}</td>
+        </tr>
+        <tr>
+            <th width="20%">用户名</th>
+            <td><input type="text" name="user_name" value="{{user_data[uid]['user_name']}}"/></td>
+        </tr>
+        <tr>
+            <th width="20%">密码</th>
+            <td><input type="password" name="user_password" value="{{user_data[uid]['user_password']}}"/><span class="zhushi">*更改密码，直接在此处修改,点击确定即可</span></td>
+        </tr>
+        <tr>
+            <th width="20%">角色组</th>
+            <td>{{user_data[uid]['role_name']}}</td>
+        </tr>
+        {% end %}
+        <tr>
+                <td colspan=2 class='c'><input type="submit"  style="width:80px;" class='button' name="add_user" value="确定" /></td>
+        </tr>
+</table>
+</form>
+</div>
+
+{% end %}

@@ -43,12 +43,12 @@ class AllMachineInfo(object):
     def add_host(result):
         db = MysqlServer(settings.DATABASES)
         sql = "insert into zc_machine (serverip, publicip , rid, memsize, cpunum, disksize, \
-        serverrack, sn, stype, os, service, mstatus, ccid, comment) \
-        values ('%s', '%s', '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%d', '%s')" % \
+        serverrack, sn, stype, os, service, mstatus, ccid, comment, createtime) \
+        values ('%s', '%s', '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%d', '%s', '%s')" % \
         (result["server_ip"], result["public_ip"], int(result["idc_name"]), result["mem_size"],
          result["cpu_num"], result["disk_size"], result["server_rack"], result["sn"],
          result["server_type"], result["os"], int(result["project_name"]), result["server_status"],
-         int(result["server_contact"]), result['comment'])
+         int(result["server_contact"]), result['comment'], result['create_time'])
         db.execute_sql(sql)
         db.close()
 
@@ -68,11 +68,11 @@ class AllMachineInfo(object):
         db = MysqlServer(settings.DATABASES)
         sql = "update zc_machine set serverip='%s', publicip='%s', rid='%d', memsize='%s', cpunum='%s', \
          disksize='%s', serverrack='%s', sn='%s', stype='%s', os='%s', service='%d', mstatus='%s', ccid='%d', \
-          comment='%s' where mid='%d' " % \
+          comment='%s', modifytime='%s' where mid='%d' " % \
         (result["server_ip"], result["public_ip"], int(result["idc_name"]), result["mem_size"],
          result["cpu_num"], result["disk_size"], result["server_rack"], result["sn"],
          result["server_type"], result["os"], int(result["project_name"]), result["server_status"],
-         int(result["server_contact"]), result['comment'], int(mid))
+         int(result["server_contact"]), result['comment'], result['modify_time'], int(mid))
         db.execute_sql(sql)
         db.close()
 
@@ -129,14 +129,6 @@ class AllMachineInfo(object):
         `stype`,`os`,`sname`,`mstatus`,`cname`,`cinfo`,`comment`,zc_machine.`mid` from zc_machine left join \
         zc_idc on zc_machine.rid = zc_idc.rid left join zc_service on zc_machine.service = zc_service.sid \
         left join zc_contact on zc_machine.ccid = zc_contact.ccid where zc_machine.service = '%s'" % result
-        result = db.run_sql(sql)
-        db.close()
-        return result
-
-    @staticmethod
-    def check_user_login(result):
-        db = MysqlServer(settings.DATABASES)
-        sql = "select `username`,`password` from zc_user where username='%s'" % result
         result = db.run_sql(sql)
         db.close()
         return result

@@ -1,0 +1,29 @@
+{% extends "../base.html" %}
+{% block div %}
+
+<div id="content"  style="width:80% !important;">
+<form action="/adduser" method="post">
+<table>
+        <tr>
+		       <th colspan=6 align=h1>添加用户</th>
+	    </tr>
+        <tr>
+            <th width="20%">用户名</th>
+            <td><input type="text" name="user_name"/><span class="zhushi">*用户名不能为空</span></td>
+        </tr>
+        <tr>
+            <th width="20%">密码</th>
+            <td><input type="password" name="user_password"/></td>
+        </tr>
+        <tr>
+            <th width="20%">角色组</th>
+            <td>administrator</td>
+        </tr>
+        <tr>
+                <td colspan=2 class='c'><input type="submit"  style="width:80px;" class='button' name="add_user" value="确定" /></td>
+        </tr>
+</table>
+</form>
+</div>
+
+{% end %}

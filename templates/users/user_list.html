@@ -1,0 +1,32 @@
+{% extends "../base.html" %}
+{% block div %}
+
+<div id="content">
+<table style="width:80% !important; text-align:center">
+        <tr>
+		       <th colspan=6 align=h1>OPS用户管理</h1></th>
+	    </tr>
+        <tr>
+            <th width="10%">用户标识</th>
+            <th width="20%">用户名</th>
+            <th width="20%">密码</th>
+            <th width="20%">角色组</th>
+            <th>操作</th>
+        </tr>
+        {% for uid in user_data %}
+        <tr>
+            <td>{{uid}}</td>
+            <td>{{user_data[uid]["user_name"]}}</td>
+            <td>***********</td>
+            <td>{{user_data[uid]["role_name"]}}</td>
+            <td><a href="/usermodify?action=modify&uid={{uid}}">编辑</a> <a onClick="return confirm('注意：确定要删除此条目吗？')" href="/usermodify?action=delete&uid={{uid}}">删除</a></td>
+        </tr>
+        {% end %}
+        <tr>
+            <th colspan="2"><a href="/adduser" class="bold"><img src="static/images/icon_add.gif">添加新用户</a></th>
+        </tr>
+</table>
+
+</div>
+
+{% end %}

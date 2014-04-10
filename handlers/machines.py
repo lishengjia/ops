@@ -1,39 +1,13 @@
 #coding:utf-8
-import tornado.web
-from modules.machines.base import BaseHandler
+import time
 
+import tornado.web
+
+from modules.base import BaseHandler
 import settings
 from modules.machines.mysql_opertation import AllMachineInfo
 from modules.machines.data_manage import DataManage
-from modules.machines.check import Check
-
-
-class Login(BaseHandler):
-    origin_url = ""
-
-    def get(self, *args, **kwargs):
-        Login.origin_url = self.get_argument("next")
-        self.render("machines/login.html", login_strings=dict(username="Username", password="Password"))
-
-    def post(self, *args, **kwargs):
-        input_username = self.get_argument("username")
-        input_password = self.get_argument("password")
-        check_result = Check.login_check(input_username, input_password)
-        if check_result == "Invalid username":
-            self.render("machines/login.html", login_strings=dict(username="Invalid username", password="Password"))
-        elif check_result == "ok":
-            self.set_secure_cookie(settings.cookie_name, input_username)
-            self.redirect(Login.origin_url)
-        elif check_result == "Incorrect password":
-            self.render("machines/login.html", login_strings=dict(username="Username", password="Incorrect password"))
-        else:
-            self.redirect("/login?next=/")
-
-
-class Logout(BaseHandler):
-    def get(self, *args, **kwargs):
-        self.clear_cookie(settings.cookie_name)
-        self.redirect("/login?next=/")
+from modules.check import Check
 
 
 class MachineList(BaseHandler):
@@ -65,6 +39,7 @@ class AddHost(BaseHandler):
             data_dic["server_status"] = server_select
         result = Check.host_check(data_dic, True)
         if result == "ok":
+            data_dic["create_time"] = time.strftime('%Y-%m-%d %H:%M:%S')
             AllMachineInfo.add_host(data_dic)
             self.write("<script language='javascript'>alert('添加完成');window.location.href='/addhost';</script>")
         else:
@@ -101,6 +76,7 @@ class ModifyHost(BaseHandler):
             data_dic["server_status"] = server_select
         result = Check.host_check(data_dic, False)
         if result == "ok":
+            data_dic["modify_time"] = time.strftime('%Y-%m-%d %H:%M:%S')
             AllMachineInfo.modify_host_update(data_dic, ModifyHost.machine_id)
             self.write("<script language='javascript'>alert('修改完成');window.location.href='/';</script>")
         else:
@@ -151,4 +127,6 @@ class HostDistribute(BaseHandler):
         data_distribute, data_nums = AllMachineInfo().distribute_host
         data_distribute_handled = DataManage.manage_host_distribute(data_distribute)
         self.render("machines/host_distribute.html", name=settings.template_variables,
-                    data_distribute=data_distribute_handled,data_nums=data_nums[0][0])
+                    data_distribute=data_distribute_handled, data_nums=data_nums[0][0])
+
+
