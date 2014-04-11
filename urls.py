@@ -1,6 +1,6 @@
 #coding:utf-8
 
-from handlers.machines import MachineList, AddHost, ModifyHost, SearchHosts, HostDistribute
+from handlers.machines import MachineList, AddHost, ModifyHost, SearchHosts, HostDistribute, HostExport
 from handlers.user import Login, Logout, UserList, UserModify, AddUser
 
 urls = [
@@ -14,4 +14,5 @@ urls = [
     (r"/userlist", UserList),
     (r"/usermodify", UserModify),
     (r"/adduser", AddUser),
+    (r"/export", HostExport)
 ]

@@ -18,4 +18,7 @@ DATABASES = dict(
 ADD_HOST_LIST = ["server_ip", "public_ip", "idc_name", "mem_size", "disk_size", "cpu_num",
                  "server_rack", "sn", "server_type", "os", "project_name", "server_status", "server_contact", "comment"]
 
+HOST_LIST_EXPORT = ['内网地址', '外网地址', '机房', '内存', '硬盘', 'cpu', '机架', 'SN号', '机型',
+                   '操作系统', '项目',	'状态', '负责人', '备注']
+
 cookie_name = "user_id"

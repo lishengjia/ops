@@ -19,14 +19,13 @@
             <td>{{user_data[uid]["user_name"]}}</td>
             <td>***********</td>
             <td>{{user_data[uid]["role_name"]}}</td>
-            <td><a href="/usermodify?action=modify&uid={{uid}}">编辑</a> <a onClick="return confirm('注意：确定要删除此条目吗？')" href="/usermodify?action=delete&uid={{uid}}">删除</a></td>
+            <th><a href="/usermodify?action=modify&uid={{uid}}">编辑</a> <a onClick="return confirm('注意：确定要删除此条目吗？')" href="/usermodify?action=delete&uid={{uid}}">删除</a></th>
         </tr>
         {% end %}
         <tr>
             <th colspan="2"><a href="/adduser" class="bold"><img src="static/images/icon_add.gif">添加新用户</a></th>
         </tr>
 </table>
-
 </div>
 
 {% end %}

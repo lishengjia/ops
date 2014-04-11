@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="user.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="26" selection-start="3744" selection-end="3744" vertical-scroll-proportion="1.5480769" vertical-offset="1066" max-vertical-offset="1957">
+            <state line="90" column="26" selection-start="3744" selection-end="3744" vertical-scroll-proportion="0.0" vertical-offset="1066" max-vertical-offset="1957">
               <folding>
                 <element signature="e#14#32#0" expanded="true" />
               </folding>
@@ -37,10 +37,17 @@
       <file leaf-file-name="mysql_opertation.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/users/mysql_opertation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="87" selection-start="1960" selection-end="1960" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1330">
-              <folding>
-                <element signature="e#33#48#0" expanded="true" />
-              </folding>
+            <state line="61" column="87" selection-start="1960" selection-end="1960" vertical-scroll-proportion="0.0" vertical-offset="1159" max-vertical-offset="1330">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="machines.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/handlers/machines.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="-0.086330935" vertical-offset="74" max-vertical-offset="2812">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -48,7 +55,7 @@
       <file leaf-file-name="data_manage.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/users/data_manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="24" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
+            <state line="15" column="24" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="399">
               <folding />
             </state>
           </provider>
@@ -58,9 +65,7 @@
         <entry file="file://$PROJECT_DIR$/modules/check.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="60" column="42" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0" vertical-offset="819" max-vertical-offset="1349">
-              <folding>
-                <element signature="e#14#73#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,11 +73,8 @@
       <file leaf-file-name="user_modify.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/users/user_modify.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="506" selection-end="506" vertical-scroll-proportion="1.75" vertical-offset="372" max-vertical-offset="760">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#0;n#tr#5;n#table#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="17" column="13" selection-start="506" selection-end="506" vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="760">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,11 +82,8 @@
       <file leaf-file-name="add_user.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/users/add_user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="38" selection-start="134" selection-end="134" vertical-scroll-proportion="-2.2142856" vertical-offset="14" max-vertical-offset="646">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#0;n#tr#4;n#table#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="4" column="38" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="646">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,9 +92,7 @@
         <entry file="file://$PROJECT_DIR$/modules/machines/mysql_opertation.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="134" column="0" selection-start="6854" selection-end="6854" vertical-scroll-proportion="0.0" vertical-offset="617" max-vertical-offset="2660">
-              <folding>
-                <element signature="e#33#48#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -189,7 +186,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -324,6 +320,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,25 +526,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1587057" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2403698" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960877" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18701096" sideWeight="0.7395833" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30354393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16666667" sideWeight="0.25833333" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25731894" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25577813" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2403698" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -564,9 +561,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960877" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16118936" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26348227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26348227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -590,19 +587,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="304">
-          <folding>
-            <element signature="e#15#106#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="9" column="17" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="304" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/machines/mysql_opertation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="30" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0" vertical-offset="399" max-vertical-offset="798">
-          <folding>
-            <element signature="e#33#48#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -625,11 +616,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="285">
-          <folding>
-            <element signature="e#15#106#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="6" column="27" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="285" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/machines/main.html">
@@ -645,9 +632,7 @@
     <entry file="file://$PROJECT_DIR$/modules/machines/mysql_opertation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="456">
-          <folding>
-            <element signature="e#33#48#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -670,18 +655,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/mysql_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="1102">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="1102" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="285">
-          <folding>
-            <element signature="e#15#106#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="3" column="0" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="285" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/machines/main.html">
@@ -703,9 +682,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="2285" vertical-scroll-proportion="0.0" vertical-offset="1079" max-vertical-offset="1748">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="2285" vertical-scroll-proportion="0.0" vertical-offset="1079" max-vertical-offset="1748" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/applications.py">
@@ -715,11 +692,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="285">
-          <folding>
-            <element signature="e#15#106#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="3" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="285" />
       </provider>
     </entry>
     <entry file="file:///usr/lib/python2.7/socket.py">
@@ -764,79 +737,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/mysql_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="1452" selection-end="1452" vertical-scroll-proportion="0.46478873" vertical-offset="771" max-vertical-offset="1197">
-          <folding />
-        </state>
+        <state line="52" column="0" selection-start="1452" selection-end="1452" vertical-scroll-proportion="0.46478873" vertical-offset="771" max-vertical-offset="1197" />
       </provider>
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/tornado/web.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="38" selection-start="2935" selection-end="2944" vertical-scroll-proportion="-1.42723" vertical-offset="1976" max-vertical-offset="50540">
-          <folding />
-        </state>
+        <state line="104" column="38" selection-start="2935" selection-end="2944" vertical-scroll-proportion="-1.42723" vertical-offset="1976" max-vertical-offset="50540" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/users/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="9" selection-start="1049" selection-end="1049" vertical-scroll-proportion="1.4274611" vertical-offset="0" max-vertical-offset="684">
-          <folding />
-        </state>
+        <state line="29" column="9" selection-start="1049" selection-end="1049" vertical-scroll-proportion="1.4274611" vertical-offset="0" max-vertical-offset="684" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/machines/search_hosts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="67" selection-start="351" selection-end="351" vertical-scroll-proportion="-2.8634145" vertical-offset="1364" max-vertical-offset="1919">
-          <folding />
-        </state>
+        <state line="10" column="67" selection-start="351" selection-end="351" vertical-scroll-proportion="-2.8634145" vertical-offset="1364" max-vertical-offset="1919" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="46" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.61463416" vertical-offset="147" max-vertical-offset="741">
-          <folding />
-        </state>
+        <state line="21" column="46" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.61463416" vertical-offset="147" max-vertical-offset="741" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/machines/modify_host.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="25" selection-start="4135" selection-end="4135" vertical-scroll-proportion="4.4792747" vertical-offset="0" max-vertical-offset="2090">
-          <folding />
-        </state>
+        <state line="91" column="25" selection-start="4135" selection-end="4135" vertical-scroll-proportion="4.4792747" vertical-offset="0" max-vertical-offset="2090" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="86" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="494">
-          <folding />
-        </state>
+        <state line="6" column="4" selection-start="86" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="494" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/machines/add_host.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="105" selection-start="362" selection-end="390" vertical-scroll-proportion="0.48969072" vertical-offset="0" max-vertical-offset="1862">
-          <folding />
-        </state>
+        <state line="10" column="105" selection-start="362" selection-end="390" vertical-scroll-proportion="0.48969072" vertical-offset="0" max-vertical-offset="1862" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/users/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="385">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="385" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="59" selection-start="291" selection-end="291" vertical-scroll-proportion="0.3653846" vertical-offset="0" max-vertical-offset="416">
-          <folding />
-        </state>
+        <state line="9" column="59" selection-start="291" selection-end="291" vertical-scroll-proportion="0.3653846" vertical-offset="0" max-vertical-offset="416" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/machines/data_manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="33" selection-end="33" vertical-scroll-proportion="0.13286713" vertical-offset="0" max-vertical-offset="1482">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="33" selection-end="33" vertical-scroll-proportion="0.13286713" vertical-offset="0" max-vertical-offset="1482" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/users/data_manage.py">
@@ -846,98 +797,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/machines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2622">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="70" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
-          <folding>
-            <element signature="e#15#106#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="3" column="70" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/users/user_modify.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="506" selection-end="506" vertical-scroll-proportion="1.75" vertical-offset="372" max-vertical-offset="760">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#5;n#table#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="17" column="13" selection-start="506" selection-end="506" vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="760">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/machines/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="8" selection-start="120" selection-end="199" vertical-scroll-proportion="0.24484536" vertical-offset="0" max-vertical-offset="1786">
-          <folding />
-        </state>
+        <state line="5" column="8" selection-start="120" selection-end="199" vertical-scroll-proportion="0.24484536" vertical-offset="0" max-vertical-offset="1786" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/users/user_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="12" selection-start="953" selection-end="953" vertical-scroll-proportion="-6.392857" vertical-offset="315" max-vertical-offset="703">
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
+        <state line="26" column="12" selection-start="953" selection-end="953" vertical-scroll-proportion="-6.392857" vertical-offset="315" max-vertical-offset="703" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/users/add_user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="38" selection-start="134" selection-end="134" vertical-scroll-proportion="-2.2142856" vertical-offset="14" max-vertical-offset="646">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#4;n#table#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="4" column="38" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="646">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/MySQL_python-1.2.5-py2.7-linux-i686.egg/MySQLdb/connections.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.33173078" vertical-offset="432" max-vertical-offset="6688">
-          <folding />
-        </state>
+        <state line="35" column="0" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.33173078" vertical-offset="432" max-vertical-offset="6688" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/machines/mysql_opertation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="134" column="0" selection-start="6854" selection-end="6854" vertical-scroll-proportion="0.0" vertical-offset="617" max-vertical-offset="2660">
-          <folding>
-            <element signature="e#33#48#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/users/mysql_opertation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="87" selection-start="1960" selection-end="1960" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1330">
-          <folding>
-            <element signature="e#33#48#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/check.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="42" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0" vertical-offset="819" max-vertical-offset="1349">
-          <folding>
-            <element signature="e#14#73#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="26" selection-start="3744" selection-end="3744" vertical-scroll-proportion="1.5480769" vertical-offset="1066" max-vertical-offset="1957">
+        <state line="90" column="26" selection-start="3744" selection-end="3744" vertical-scroll-proportion="0.0" vertical-offset="1066" max-vertical-offset="1957">
           <folding>
             <element signature="e#14#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/machines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="-0.086330935" vertical-offset="74" max-vertical-offset="2812">
+          <folding />
         </state>
       </provider>
     </entry>

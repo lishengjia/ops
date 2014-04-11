@@ -1,5 +1,6 @@
 #coding:utf-8
 import time
+import os
 
 import tornado.web
 
@@ -130,3 +131,13 @@ class HostDistribute(BaseHandler):
                     data_distribute=data_distribute_handled, data_nums=data_nums[0][0])
 
 
+class HostExport(BaseHandler):
+    @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        server_data = AllMachineInfo().machine_list
+        server_data_handled = DataManage.manage_machine_list(server_data)
+        DataManage.manage_host_export(server_data_handled)
+        self.add_header("Content-Type", "application/vnd.ms-excel")
+        self.add_header("Content-Disposition", "attachment;filename=machine.xls")
+        self.render("../download/machine.xls")
+        os.system("rm -rf download/machine.xls")

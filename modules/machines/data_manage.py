@@ -67,6 +67,33 @@ class DataManage(object):
             tmp_dict[line[0]] = {line[1]: line[2]}
         return tmp_dict
 
+    @staticmethod
+    def manage_host_export(result):
+        import xlwt
+        import settings
+        files = xlwt.Workbook(encoding='utf-8')
+        table = files.add_sheet('sheet 1', cell_overwrite_ok=True)
+        style = xlwt.XFStyle()
+        font = xlwt.Font()
+        font.name = "Times New Roman"
+        style.font = font
+        col = 0
+        for key in settings.HOST_LIST_EXPORT:
+            table.write(0, col, key, style)
+            if col == 0 or col == 1 or col == 13:
+                table.col(col).width = 0x0d00 + 2000
+            col += 1
+        for identify in range(1, len(result)+1):
+            num = 0
+            for content_col in settings.ADD_HOST_LIST:
+                if content_col == "server_contact":
+                    table.write(identify, num, result[identify]["contact"]["contact_name"])
+                else:
+                    table.write(identify, num, result[identify][content_col])
+                num += 1
+        files.save('download/machine.xls')
+
+
 
 
 
