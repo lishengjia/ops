@@ -1,7 +1,6 @@
 #coding:utf-8
 import time
 import os
-
 import tornado.web
 
 from ops.model.base import BaseHandler
