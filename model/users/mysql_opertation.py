@@ -2,7 +2,7 @@
 
 """ 执行mysql语句 """
 import settings
-from modules.mysql_server import MysqlServer
+from model.mysql_server import MysqlServer
 
 
 class UserSqlOperation(object):
