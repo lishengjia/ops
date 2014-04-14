@@ -1,8 +1,8 @@
 #coding:utf-8
 
 """ 执行mysql语句 """
-import settings
-from model.mysql_server import MysqlServer
+from ops import settings
+from ops.model.mysql_server import MysqlServer
 
 
 class UserSqlOperation(object):

@@ -2,7 +2,7 @@
 
 import tornado.ioloop
 import tornado.web
-from applications import application, PORT
+from ops.applications import application, PORT
 import signal
 
 
@@ -22,7 +22,7 @@ def start_application():
 
     application.listen(options.port)
 
-    def stop_handler():
+    def stop_handler(sig, frame):
         tornado.ioloop.IOLoop.instance().stop()
 
     signal.signal(signal.SIGTERM, stop_handler)

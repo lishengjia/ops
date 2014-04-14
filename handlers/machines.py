@@ -4,11 +4,11 @@ import os
 
 import tornado.web
 
-from model.base import BaseHandler
-import settings
-from model.machines.mysql_opertation import AllMachineInfo
-from model.machines.data_manage import DataManage
-from model.check import Check
+from ops.model.base import BaseHandler
+from ops import settings
+from ops.model.machines.mysql_opertation import AllMachineInfo
+from ops.model.machines.data_manage import DataManage
+from ops.model.check import Check
 
 
 class MachineList(BaseHandler):

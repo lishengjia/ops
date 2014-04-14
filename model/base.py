@@ -1,6 +1,6 @@
 #coding:utf-8
 import tornado.web
-import settings
+from ops import settings
 
 
 class BaseHandler(tornado.web.RequestHandler):

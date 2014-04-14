@@ -3,7 +3,7 @@
 import tornado.ioloop
 import tornado.web
 import os
-from urls import urls
+from ops.urls import urls
 
 
 PORT = 8888

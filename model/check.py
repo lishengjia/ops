@@ -1,6 +1,6 @@
 #coding:utf-8
-from model.users.mysql_opertation import UserSqlOperation
-from model.machines.mysql_opertation import AllMachineInfo
+from ops.model.users.mysql_opertation import UserSqlOperation
+from ops.model.machines.mysql_opertation import AllMachineInfo
 
 
 class Check():

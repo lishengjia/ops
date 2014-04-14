@@ -1,11 +1,11 @@
 #coding:utf-8
 import tornado.web
 
-from model.base import BaseHandler
-import settings
-from model.users.mysql_opertation import UserSqlOperation
-from model.users.data_manage import UserDataManage
-from model.check import Check
+from ops.model.base import BaseHandler
+from ops import settings
+from ops.model.users.mysql_opertation import UserSqlOperation
+from ops.model.users.data_manage import UserDataManage
+from ops.model.check import Check
 
 
 class Login(BaseHandler):
