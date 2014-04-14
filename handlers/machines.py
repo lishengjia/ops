@@ -27,6 +27,7 @@ class AddHost(BaseHandler):
     def get(self):
         select_data = AllMachineInfo().add_host_select
         select_data_handled, status_handled = DataManage.manage_add_host_select(select_data)
+        print status_handled
         self.render('machines/add_host.html', name=settings.template_variables, select_data=select_data_handled,
                     select_data_status=status_handled)
 
@@ -35,7 +36,8 @@ class AddHost(BaseHandler):
         data_list = settings.ADD_HOST_LIST
         for name in data_list:
             data_dic[name] = self.get_argument(name)
-        server_select = self.get_argument("server_select_status")
+        if self.get_argument("server_select_status"):
+            server_select = self.get_argument("server_select_status")
         if data_dic["server_status"].strip() == '':
             data_dic["server_status"] = server_select
         result = Check.host_check(data_dic, True)

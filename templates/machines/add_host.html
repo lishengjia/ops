@@ -64,6 +64,9 @@
                 <td><label>状态</label></td>
                 <td>
                 <select name='server_select_status'>
+                    {% if not select_data_status %}
+                    <option value=False></option>
+                    {% end %}
                     {% for status in select_data_status %}
                     <option value={{status}}>{{status}}</option>
                     {% end %}
