@@ -44,7 +44,7 @@ mysql> quit
 注：supervisord.conf配置文件中默认定义了server的监听端口和log路径等信息，有需要的话，可以自行修改。
 
 
-使用ops_server命令启动
+或者使用ops_server命令直接启动
 
 \# ops_server -port=8000 -log_file_prefix=/tmp/ops_server.log -logging=info -log_file_max_size=102400 -log_to_stderr=False &
 
