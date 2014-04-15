@@ -3,3 +3,4 @@ python 2.7.3
 mysql-python
 xlwt
 tornado
+supervisor
