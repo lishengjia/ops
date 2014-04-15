@@ -22,11 +22,6 @@ setup(
     },
     package_data = {
     },
-    install_requires=[
-        'tornado',
-        'xlwt',
-        'mysql-python',
-    ],
     author = "lishengjia",
     author_email = '825137600@qq.com',
     url = "https://github.com/lishengjia",
