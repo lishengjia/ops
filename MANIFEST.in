@@ -1,1 +1,1 @@
-recursive-include ops *.txt *.css *.js *.jpg *.gif *.png *.html
+recursive-include ops *.txt *.css *.js *.jpg *.gif *.png *.html *.htm

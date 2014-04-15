@@ -26,7 +26,7 @@
       <file leaf-file-name="machines.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ops/handlers/machines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2831">
+            <state line="4" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="2831">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="setup.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="21" selection-start="436" selection-end="436" vertical-scroll-proportion="0.6333333" vertical-offset="171" max-vertical-offset="722">
+            <state line="9" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="0.1928934" vertical-offset="0" max-vertical-offset="722">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="mysql_server.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ops/model/mysql_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="8" selection-start="43" selection-end="50" vertical-scroll-proportion="-3.04" vertical-offset="0" max-vertical-offset="1216">
+            <state line="4" column="8" selection-start="43" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1216">
               <folding />
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="requirement.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirement.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="23" selection-end="30" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
+            <state line="2" column="0" selection-start="23" selection-end="30" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="209">
               <folding />
             </state>
           </provider>
@@ -125,9 +125,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="24" />
+    <option name="y" value="53" />
     <option name="width" value="1301" />
-    <option name="height" value="744" />
+    <option name="height" value="715" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -155,6 +155,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -225,7 +226,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -430,7 +430,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
+    <frame x="65" y="53" width="1301" height="715" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -441,15 +441,15 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30354393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16666667" sideWeight="0.25833333" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26194146" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26190478" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2403698" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2403698" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -466,9 +466,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960877" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16118936" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26348227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26348227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -490,6 +490,34 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ops/handlers/machines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="2831">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="21" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="722">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ops/model/mysql_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="8" selection-start="43" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="23" selection-end="30" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="209">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///usr/lib/python2.7/socket.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="220" column="14" selection-start="7615" selection-end="7619" vertical-scroll-proportion="10.491095" vertical-offset="0" max-vertical-offset="10944" />
@@ -526,14 +554,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ops/model/mysql_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="8" selection-start="43" selection-end="50" vertical-scroll-proportion="-3.04" vertical-offset="0" max-vertical-offset="1216">
+        <state line="4" column="8" selection-start="43" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1216">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="21" selection-start="436" selection-end="436" vertical-scroll-proportion="0.6333333" vertical-offset="171" max-vertical-offset="722">
+        <state line="9" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="0.1928934" vertical-offset="0" max-vertical-offset="722">
           <folding />
         </state>
       </provider>
