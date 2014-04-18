@@ -1,0 +1,33 @@
+{% extends "../base.html" %}
+{% block div %}
+
+<div id="content"  style="width:80% !important;">
+<form action="/roommodify" method="post">
+<table>
+        <tr>
+		       <th colspan=6 align=h1>OPS机房管理</th>
+	    </tr>
+        <tr>
+            <th width="10%">机房名称</th>
+            <td><input type="text" name="room_name" value="{{single_room_data[0]}}"/></td>
+        </tr>
+        <tr>
+            <th width="20%">机房联系人</th>
+            <td><input type="text" name="room_contact" value="{{single_room_data[1]}}"/></td>
+        </tr>
+        <tr>
+            <th width="20%">联系人电话</th>
+            <td><input type="text" name="contact_phone" value="{{single_room_data[2]}}"/></td>
+        </tr>
+        <tr>
+            <th width="20%">备注</th>
+            <td><textarea name="room_comment" rows="2" cols="20">{{single_room_data[3]}}</textarea></td>
+        </tr>
+        <tr>
+                <td colspan=2 class='c'><input type="submit"  style="width:80px;" class='button' name="add_room" value="确定" /></td>
+        </tr>
+</table>
+</form>
+</div>
+
+{% end %}

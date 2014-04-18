@@ -132,3 +132,19 @@ class AllMachineInfo(object):
         result = db.run_sql(sql)
         db.close()
         return result
+
+    @staticmethod
+    def room_list():
+        db = MysqlServer(settings.DATABASES)
+        sql = "select `rid`,`idcname`,`contact`,`phone`,`comments` from zc_idc"
+        result = db.run_sql(sql)
+        db.close()
+        return result
+
+    @staticmethod
+    def room_modify(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "select `idcname`,`contact`,`phone`,`comments` from zc_idc where rid=%d" % int(result)
+        result = db.run_sql(sql)
+        db.close()
+        return result

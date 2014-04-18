@@ -90,7 +90,6 @@ class AddUser(BaseHandler):
         result = Check.user_modify_check(user_data, True)
         if result == "ok":
             user_data["user_password"] = Check.md5(user_data["user_password"])
-            print user_data
             UserSqlOperation.add_user(user_data)
             self.write("<script language='javascript'>alert('添加完成');window.location.href='/adduser';</script>")
         else:

@@ -1,0 +1,33 @@
+{% extends "../base.html" %}
+{% block div %}
+
+<div id="content">
+<table style="width:80% !important; text-align:center">
+        <tr>
+		       <th colspan=6 align=h1>OPS机房管理</h1></th>
+	    </tr>
+        <tr>
+            <th width="12%">机房名称</th>
+            <th width="12%">设备数量</th>
+            <th width="15%">机房联系人</th>
+            <th width="15%">联系人电话</th>
+            <th width="20%">备注</th>
+            <th>操作</th>
+        </tr>
+        {% for rid in room_data %}
+        <tr>
+            <td>{{room_data[rid]["room_name"]}}</td>
+            <td></td>
+            <td>{{room_data[rid]["room_contact"]}}</td>
+            <td>{{room_data[rid]["contact_phone"]}}</td>
+            <td>{{room_data[rid]["room_comment"]}}</td>
+            <th><a href="/roommodify?action=modify&rid={{rid}}">编辑</a> <a onClick="return confirm('注意：确定要删除此条目吗？')" href="/roommodify?action=delete&rid={{rid}}">删除</a></th>
+        </tr>
+        {% end %}
+        <tr>
+            <th colspan="2"><a href="/addroom" class="bold"><img src="static/images/icon_add.gif">添加机房</a></th>
+        </tr>
+</table>
+</div>
+
+{% end %}

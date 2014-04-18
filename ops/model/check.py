@@ -56,7 +56,6 @@ class Check():
         elif len(result["user_password"]) < 20:
             if flag:
                 check_username = UserSqlOperation.user_modify_check(result["user_name"])
-                print check_username
                 if check_username:
                     if check_username[0][0] == result["user_name"]:
                         return str_check_existed

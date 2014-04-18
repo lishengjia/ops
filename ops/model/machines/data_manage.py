@@ -70,7 +70,7 @@ class DataManage(object):
     @staticmethod
     def manage_host_export(result):
         import xlwt
-        import settings
+        from ops import settings
         files = xlwt.Workbook(encoding='utf-8')
         table = files.add_sheet('sheet 1', cell_overwrite_ok=True)
         style = xlwt.XFStyle()
@@ -91,7 +91,19 @@ class DataManage(object):
                 else:
                     table.write(identify, num, result[identify][content_col])
                 num += 1
-        files.save('download/machine.xls')
+        files.save('ops/download/machine.xls')
+
+    @staticmethod
+    def manage_room_list(result):
+        dic_data = dict()
+        for line in result:
+            tmp_dict = dict()
+            tmp_dict["room_name"] = line[1]
+            tmp_dict["room_contact"] = line[2]
+            tmp_dict["contact_phone"] = line[3]
+            tmp_dict["room_comment"] = line[4]
+            dic_data[line[0]] = tmp_dict
+        return dic_data
 
 
 

@@ -26,7 +26,6 @@ class AddHost(BaseHandler):
     def get(self):
         select_data = AllMachineInfo().add_host_select
         select_data_handled, status_handled = DataManage.manage_add_host_select(select_data)
-        print status_handled
         self.render('machines/add_host.html', name=settings.template_variables, select_data=select_data_handled,
                     select_data_status=status_handled)
 
@@ -142,3 +141,41 @@ class HostExport(BaseHandler):
         self.add_header("Content-Disposition", "attachment;filename=machine.xls")
         self.render("../download/machine.xls")
         os.system("rm -rf download/machine.xls")
+
+
+class RoomList(BaseHandler):
+    @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        room_data = AllMachineInfo.room_list()
+        room_data_handled = DataManage.manage_room_list(room_data)
+        self.render("machines/room_list.html", name=settings.template_variables, room_data=room_data_handled)
+
+
+class RoomModify(BaseHandler):
+    @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        action = self.get_argument("action")
+        rid = self.get_argument("rid")
+        if action == "modify":
+            single_room_data = AllMachineInfo.room_modify(rid)
+            self.render("machines/room_modify.html", name=settings.template_variables, single_room_data=single_room_data[0])
+        elif action == "delete":
+            print ''
+
+
+class AddRoom(BaseHandler):
+    @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        self.write("ok")
+
+
+class AddProject(BaseHandler):
+    @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        self.write("ok")
+
+
+class AddContact(BaseHandler):
+    @tornado.web.authenticated
+    def get(self, *args, **kwargs):
+        self.write("ok")

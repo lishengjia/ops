@@ -44,7 +44,6 @@ class UserSqlOperation(object):
         db = MysqlServer(settings.DATABASES)
         sql = "update zc_user set username='%s',userpassword='%s' where uid='%s'" % (result["user_name"],
         result["user_password"], uid)
-        print sql
         db.execute_sql(sql)
         db.close()
 
@@ -60,6 +59,5 @@ class UserSqlOperation(object):
     def add_user(result):
         db = MysqlServer(settings.DATABASES)
         sql = '''insert into zc_user (rid,username,userpassword) values ("%d","%s","%s")''' % (1, str(result["user_name"]), str(result["user_password"]))
-        print sql
         db.execute_sql(sql)
         db.close()
