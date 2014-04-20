@@ -1,0 +1,21 @@
+{% extends "../base.html" %}
+{% block div %}
+<div id="content">
+<table style="width:80% !important; text-align:center">
+        <tr>
+            <th>标识</th>
+            <th>负责人姓名</th>
+            <th>负责人电话</th>
+            <th>操作</th>
+        </tr>
+        {% for cid in contact_list.keys() %}
+        <tr>
+                <td>{{cid}}</td>
+                <td>{{contact_list[cid]["contact_name"]}}</td>
+                <td>{{contact_list[cid]["contact_info"]}}</td>
+                <th><a onClick="return confirm('注意：确定要删除此条目吗？')" href="/contactmanage?action=delete&cid={{contact_list[cid]["contact_id"]}}">删除</a></th>
+        </tr>
+        {% end %}
+</table>
+</div>
+{% end %}

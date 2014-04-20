@@ -94,8 +94,9 @@ class DataManage(object):
         files.save('ops/download/machine.xls')
 
     @staticmethod
-    def manage_room_list(result):
+    def manage_room_list(result, result_count):
         dic_data = dict()
+        dic_data_count = dict()
         for line in result:
             tmp_dict = dict()
             tmp_dict["room_name"] = line[1]
@@ -103,9 +104,31 @@ class DataManage(object):
             tmp_dict["contact_phone"] = line[3]
             tmp_dict["room_comment"] = line[4]
             dic_data[line[0]] = tmp_dict
+        for line_count in result_count:
+            dic_data_count[line_count[0]] = line_count[1]
+        return dic_data, dic_data_count
+
+    @staticmethod
+    def manage_project_list(result):
+        dic_data = dict()
+        num = 1
+        for line in result:
+            tmp_dic = dict()
+            tmp_dic["project_id"] = line[0]
+            tmp_dic["project_name"] = line[1]
+            dic_data[num] = tmp_dic
+            num += 1
         return dic_data
 
-
-
-
-
+    @staticmethod
+    def manage_contact_list(result):
+        dic_data = dict()
+        num = 1
+        for line in result:
+            tmp_dic = dict()
+            tmp_dic["contact_id"] = line[0]
+            tmp_dic["contact_name"] = line[1]
+            tmp_dic["contact_info"] = line[2]
+            dic_data[num] = tmp_dic
+            num += 1
+        return dic_data

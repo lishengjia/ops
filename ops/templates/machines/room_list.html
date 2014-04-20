@@ -4,7 +4,7 @@
 <div id="content">
 <table style="width:80% !important; text-align:center">
         <tr>
-		       <th colspan=6 align=h1>OPS机房管理</h1></th>
+		       <th colspan=6 align=h1>OPS机房管理</th>
 	    </tr>
         <tr>
             <th width="12%">机房名称</th>
@@ -17,7 +17,7 @@
         {% for rid in room_data %}
         <tr>
             <td>{{room_data[rid]["room_name"]}}</td>
-            <td></td>
+            <td>{{room_count[rid]}}</td>
             <td>{{room_data[rid]["room_contact"]}}</td>
             <td>{{room_data[rid]["contact_phone"]}}</td>
             <td>{{room_data[rid]["room_comment"]}}</td>

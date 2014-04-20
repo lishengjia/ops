@@ -56,10 +56,24 @@ class Check():
         elif len(result["user_password"]) < 20:
             if flag:
                 check_username = UserSqlOperation.user_modify_check(result["user_name"])
-                if check_username:
-                    if check_username[0][0] == result["user_name"]:
-                        return str_check_existed
+                if check_username and check_username[0][0] == result["user_name"]:
+                    return str_check_existed
                 else:
                     return "ok"
             else:
                 return "ok"
+
+    @staticmethod
+    def room_check(result, flag):
+        room_check_empty = "<script language='javascript'>alert('机房名字必须填写');window.history.back(-1);</script>"
+        room_check_exist = "<script language='javascript'>alert('机房已经存在');window.history.back(-1);</script>"
+        if result["room_name"].strip() == "":
+            return room_check_empty
+        elif flag:
+            check_room_name = AllMachineInfo.add_room_check(result["room_name"])
+            if check_room_name and check_room_name[0][0] == result["room_name"]:
+                return room_check_exist
+            else:
+                return "ok"
+        else:
+            return "ok"

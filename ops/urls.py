@@ -1,7 +1,7 @@
 #coding:utf-8
 
 from ops.handlers.machines import MachineList, AddHost, ModifyHost, SearchHosts, HostDistribute, \
-    HostExport, RoomList, RoomModify,  AddRoom, AddProject, AddContact
+    HostExport, RoomList, RoomModify,  AddRoom, ProjectManage, ContactManage
 from ops.handlers.user import Login, Logout, UserList, UserModify, AddUser
 
 urls = [
@@ -19,6 +19,6 @@ urls = [
     (r"/roomlist", RoomList),
     (r"/roommodify", RoomModify),
     (r"/addroom", AddRoom),
-    (r"/addproject", AddProject),
-    (r"/addcontact", AddContact),
+    (r"/projectmanage", ProjectManage),
+    (r"/contactmanage", ContactManage),
 ]

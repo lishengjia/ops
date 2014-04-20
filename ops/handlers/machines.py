@@ -146,36 +146,83 @@ class HostExport(BaseHandler):
 class RoomList(BaseHandler):
     @tornado.web.authenticated
     def get(self, *args, **kwargs):
-        room_data = AllMachineInfo.room_list()
-        room_data_handled = DataManage.manage_room_list(room_data)
-        self.render("machines/room_list.html", name=settings.template_variables, room_data=room_data_handled)
+        room_data, room_count = AllMachineInfo.room_list()
+        room_data_handled, room_data_count_handled = DataManage.manage_room_list(room_data, room_count)
+        self.render("machines/room_list.html", name=settings.template_variables, room_data=room_data_handled,
+                    room_count=room_data_count_handled)
 
 
 class RoomModify(BaseHandler):
+    rid = ""
+
     @tornado.web.authenticated
     def get(self, *args, **kwargs):
         action = self.get_argument("action")
-        rid = self.get_argument("rid")
+        RoomModify.rid = self.get_argument("rid")
         if action == "modify":
-            single_room_data = AllMachineInfo.room_modify(rid)
-            self.render("machines/room_modify.html", name=settings.template_variables, single_room_data=single_room_data[0])
+            single_room_data = AllMachineInfo.get_room_modify(RoomModify.rid)
+            self.render("machines/modify_room.html", name=settings.template_variables, single_room_data=single_room_data[0])
         elif action == "delete":
-            print ''
+            AllMachineInfo.delete_room_modify(RoomModify.rid)
+            self.write("<script language='javascript'>window.location.href='/roomlist';</script>")
+
+
+    @tornado.web.authenticated
+    def post(self, *args, **kwargs):
+        contact_list = ["room_name", "room_contact", "contact_phone", "room_comment"]
+        contact_dict = dict()
+        for contact in contact_list:
+            contact_dict[contact] = self.get_argument(contact)
+        check_result = Check.room_check(contact_dict, False)
+        if check_result == "ok":
+            AllMachineInfo.set_room_modify(contact_dict, RoomModify.rid)
+            self.write("<script language='javascript'>alert('修改完成');window.location.href='/roomlist';</script>")
+        else:
+            self.write(check_result)
 
 
 class AddRoom(BaseHandler):
     @tornado.web.authenticated
     def get(self, *args, **kwargs):
-        self.write("ok")
+        self.render("machines/add_room.html", name=settings.template_variables)
+
+    @tornado.web.authenticated
+    def post(self, *args, **kwargs):
+        contact_data = dict()
+        contact_list = ["room_name", "room_contact", "contact_phone", "room_comment"]
+        for contact in contact_list:
+            contact_data[contact] = self.get_argument(contact)
+        check_result = Check.room_check(contact_data, True)
+        if check_result == "ok":
+            AllMachineInfo.set_add_room(contact_data)
+            self.write("<script language='javascript'>alert('添加完成');window.location.href='/roomlist';</script>")
+        else:
+            self.write(check_result)
 
 
-class AddProject(BaseHandler):
+class ProjectManage(BaseHandler):
     @tornado.web.authenticated
     def get(self, *args, **kwargs):
-        self.write("ok")
+        action = self.get_argument("action")
+        if action == "list":
+            project_list = AllMachineInfo.get_project_list()
+            project_list_handled = DataManage.manage_project_list(project_list)
+            self.render("machines/projectlist.html", name=settings.template_variables, project_list=project_list_handled)
+        elif action == "delete":
+            pid = self.get_argument("pid")
+            AllMachineInfo.delete_project(pid)
+            self.write("<script language='javascript'>window.location.href='/projectmanage?action=list';</script>")
 
 
-class AddContact(BaseHandler):
+class ContactManage(BaseHandler):
     @tornado.web.authenticated
     def get(self, *args, **kwargs):
-        self.write("ok")
+        action = self.get_argument("action")
+        if action == "list":
+            contact_list = AllMachineInfo.get_contact_list()
+            contact_list_handled = DataManage.manage_contact_list(contact_list)
+            self.render("machines/contact_list.html", name=settings.template_variables, contact_list=contact_list_handled)
+        elif action == "delete":
+            cid = self.get_argument("cid")
+            AllMachineInfo.delete_contact(cid)
+            self.write("<script language='javascript'>window.location.href='/contactmanage?action=list';</script>")

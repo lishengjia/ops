@@ -72,7 +72,7 @@
                 <select name='server_select_status'>
                     {% for status in select_data_status %}
                     {% if status == host_data[1]["server_status"] %}
-                    <option value={{idc}} selected="selected">{{host_data[1]["server_status"]}}</option>
+                    <option value={{status}} selected="selected">{{host_data[1]["server_status"]}}</option>
                     {% end %}
                     <option value={{status}}>{{status}}</option>
                     {% end %}

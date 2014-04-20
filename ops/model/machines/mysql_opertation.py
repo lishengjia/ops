@@ -90,9 +90,9 @@ class AllMachineInfo(object):
         `stype`,`os`,`sname`,`mstatus`,`cname`,`cinfo`,`comment`,zc_machine.`mid` from zc_machine left join \
         zc_idc on zc_machine.rid = zc_idc.rid left join zc_service on zc_machine.service = zc_service.sid \
         left join zc_contact on zc_machine.ccid = zc_contact.ccid where serverip like '%%%s%%' and publicip like \
-        '%%%s%%' and idcname like '%%%s%%' and memsize like '%%%s%%' and cpunum \
+        '%%%s%%' and zc_machine.rid like '%%%s%%' and memsize like '%%%s%%' and cpunum \
         like '%%%s%%' and disksize like '%%%s%%' and serverrack like '%%%s%%' and sn like '%%%s%%' and stype like \
-        '%%%s%%' and os like '%%%s%%' and sname like '%%%s%%' and mstatus like '%%%s%%' and cname like '%%%s%%' and \
+        '%%%s%%' and os like '%%%s%%' and service like '%%%s%%' and mstatus like '%%%s%%' and zc_machine.ccid like '%%%s%%' and \
         comment like '%%%s%%'" % (result["server_ip"], result["public_ip"], result["idc_name"], result["mem_size"],
         result["cpu_num"], result["disk_size"], result["server_rack"], result["sn"], result["server_type"], result["os"],
         result["project_name"], result["server_status"], result["server_contact"], result['comment'])
@@ -137,14 +137,79 @@ class AllMachineInfo(object):
     def room_list():
         db = MysqlServer(settings.DATABASES)
         sql = "select `rid`,`idcname`,`contact`,`phone`,`comments` from zc_idc"
+        sql_count = "select zc_idc.rid,count(zc_machine.serverip) from zc_machine right join zc_idc on zc_idc.rid = zc_machine.rid group by zc_idc.rid"
         result = db.run_sql(sql)
+        result_count = db.run_sql(sql_count)
         db.close()
-        return result
+        return result, result_count
 
     @staticmethod
-    def room_modify(result):
+    def get_room_modify(result):
         db = MysqlServer(settings.DATABASES)
         sql = "select `idcname`,`contact`,`phone`,`comments` from zc_idc where rid=%d" % int(result)
         result = db.run_sql(sql)
         db.close()
         return result
+
+    @staticmethod
+    def set_room_modify(result, result_rid):
+        db = MysqlServer(settings.DATABASES)
+        sql = "update zc_idc set idcname='%s',contact='%s',phone='%s',comments='%s' where zc_idc.rid='%d'" % (
+            result["room_name"], result["room_contact"], result["contact_phone"], result["room_comment"], int(result_rid)
+        )
+        db.execute_sql(sql)
+        db.close()
+
+    @staticmethod
+    def delete_room_modify(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "delete from zc_idc where zc_idc.rid='%d'" % int(result)
+        db.execute_sql(sql)
+        db.close()
+
+    @staticmethod
+    def add_room_check(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "select `idcname` from zc_idc where idcname='%s'" % result
+        result = db.run_sql(sql)
+        db.close()
+        return result
+
+    @staticmethod
+    def set_add_room(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "insert into zc_idc (idcname,contact,phone,comments) values ('%s','%s','%s','%s')" % (
+            result["room_name"], result["room_contact"], result["contact_phone"], result["room_comment"]
+        )
+        db.execute_sql(sql)
+        db.close()
+
+    @staticmethod
+    def get_project_list():
+        db = MysqlServer(settings.DATABASES)
+        sql = "select zc_service.sid,zc_service.sname from `zc_service`"
+        result = db.run_sql(sql)
+        db.close()
+        return result
+
+    @staticmethod
+    def delete_project(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "delete from zc_service where sid='%d'" % int(result)
+        db.execute_sql(sql)
+        db.close()
+
+    @staticmethod
+    def get_contact_list():
+        db = MysqlServer(settings.DATABASES)
+        sql = "select `ccid`,`cname`,`cinfo` from zc_contact"
+        result = db.run_sql(sql)
+        db.close()
+        return result
+
+    @staticmethod
+    def delete_contact(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "delete from zc_contact where ccid='%d'" % int(result)
+        db.execute_sql(sql)
+        db.close()

@@ -1,0 +1,19 @@
+{% extends "../base.html" %}
+{% block div %}
+<div id="content">
+<table style="width:80% !important; text-align:center">
+        <tr>
+            <th>标识</th>
+            <th>项目名称</th>
+            <th>操作</th>
+        </tr>
+        {% for pid in project_list.keys() %}
+        <tr>
+                <td>{{pid}}</td>
+                <td>{{project_list[pid]["project_name"]}}</td>
+                <th><a onClick="return confirm('注意：确定要删除此条目吗？')" href="/projectmanage?action=delete&pid={{project_list[pid]["project_id"]}}">删除</a></th>
+        </tr>
+        {% end %}
+</table>
+</div>
+{% end %}

@@ -22,7 +22,7 @@ class Login(BaseHandler):
         if check_result == "Invalid username":
             self.render("users/login.html", login_strings=dict(username="Invalid username", password="Password"))
         elif check_result == "ok":
-            self.set_secure_cookie(settings.cookie_name, input_username)
+            self.set_secure_cookie(settings.cookie_name, input_username, expires_days=1)
             self.redirect(Login.origin_url)
         elif check_result == "Incorrect password":
             self.render("users/login.html", login_strings=dict(username="Username", password="Incorrect password"))

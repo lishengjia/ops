@@ -53,7 +53,7 @@ CREATE TABLE `zc_contact` (
   `cname` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'Ãû×Ö',
   `cinfo` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`ccid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='ÁªÏµÈËÐÅÏ¢';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='ÁªÏµÈËÐÅÏ¢';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,7 +62,7 @@ CREATE TABLE `zc_contact` (
 
 LOCK TABLES `zc_contact` WRITE;
 /*!40000 ALTER TABLE `zc_contact` DISABLE KEYS */;
-INSERT INTO `zc_contact` VALUES (0,'李晴天','01234567890');
+INSERT INTO `zc_contact` VALUES (0,'李晴天','01234567890'),(1,'lee','01234567890'),(2,'jia','01234567890');
 /*!40000 ALTER TABLE `zc_contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,13 +75,12 @@ DROP TABLE IF EXISTS `zc_idc`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `zc_idc` (
   `rid` int(11) NOT NULL AUTO_INCREMENT,
-  `idcname` varchar(50) COLLATE utf8_unicode_ci NOT NULL COMMENT '»ú·¿Ãû³Æ',
-  `cupboardnum` int(11) NOT NULL COMMENT '»ú¹ñ×ÜÊý',
-  `contact` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'ÁªÏµÈË',
-  `createtime` int(11) NOT NULL,
-  `comments` text COLLATE utf8_unicode_ci NOT NULL COMMENT '±¸×¢',
+  `idcname` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `contact` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(11) COLLATE utf8_unicode_ci NOT NULL COMMENT 'number',
+  `comments` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`rid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +89,7 @@ CREATE TABLE `zc_idc` (
 
 LOCK TABLES `zc_idc` WRITE;
 /*!40000 ALTER TABLE `zc_idc` DISABLE KEYS */;
-INSERT INTO `zc_idc` VALUES (2,'移动',0,'no',2012,''),(3,'兆维',0,'no',2012,''),(4,'皂君庙',0,'',2012,''),(5,'土城',0,'',2012,''),(6,'北显',0,'',2013,'<p>&nbsp;北显联通机房</p>');
+INSERT INTO `zc_idc` VALUES (2,'移动','李晴天','12345678900','丰台移动机房'),(4,'皂君庙','','0',''),(5,'土城','','0','土城联通机房'),(6,'北显','','0','北显联通机房'),(7,'华为','lee','0','好机房');
 /*!40000 ALTER TABLE `zc_idc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +119,7 @@ CREATE TABLE `zc_machine` (
   `modifytime` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'machine modify time',
   `ccid` int(10) unsigned NOT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,7 +128,7 @@ CREATE TABLE `zc_machine` (
 
 LOCK TABLES `zc_machine` WRITE;
 /*!40000 ALTER TABLE `zc_machine` DISABLE KEYS */;
-INSERT INTO `zc_machine` VALUES (1,2,'1.1.1.1','222.222.222.222','','','',10,'空闲','10G','','','','这台机器不错','2014-04-14 11:13:18','2014-04-14 14:38:29',0),(2,2,'2.2.2.2','111.111.111.111','','','redhat5.7',10,'空闲','8G','100G','4','','','2014-04-14 11:14:08',NULL,0),(3,2,'3.3.3.3','','','','',10,'空闲','','','','','','2014-04-14 17:32:05',NULL,0),(4,2,'4.4.4.4','','','','',10,'空闲','','','','','','2014-04-15 10:24:40',NULL,0),(5,2,'5.5.5.5','','','','',10,'空闲','','','','','','2014-04-15 10:24:54',NULL,0),(6,2,'1.2.2.2','','','','',10,'空闲','','','','','','2014-04-15 10:25:03',NULL,0),(7,2,'1.2.3.3','','','','',10,'空闲','','','','','','2014-04-15 10:25:12',NULL,0),(8,2,'4.4.4.5','','','','',10,'空闲','','','','','','2014-04-15 10:25:21',NULL,0),(9,2,'6.6.6.6','','','','',10,'空闲','','','','','','2014-04-15 10:25:28',NULL,0),(10,2,'1.2.3.1','','','','',10,'空闲','','','','','','2014-04-15 10:25:34',NULL,0),(11,2,'1.1.1.7','','','','',10,'空闲','','','','','','2014-04-15 10:25:42',NULL,0),(12,2,'2.2.2.1','','','','',10,'空闲','','','','','','2014-04-15 10:26:04',NULL,0),(13,2,'3.2.2.1','','','','',10,'空闲','','','','','','2014-04-15 10:26:12',NULL,0),(14,2,'2.3.5.1','','','','',10,'空闲','','','','','','2014-04-15 10:26:19',NULL,0),(15,2,'2.2.1.1','','','','',10,'空闲','','','','','','2014-04-15 10:26:28',NULL,0);
+INSERT INTO `zc_machine` VALUES (1,2,'1.1.1.188','222.222.222.222','','','',12,'在线','10G','','','','这台机器不错','2014-04-14 11:13:18','2014-04-20 13:09:04',0),(2,3,'2.2.2.2','111.111.111.111','','','redhat5.7',10,'在线','8G','100G','4','','','2014-04-14 11:14:08','2014-04-20 14:25:17',0),(3,2,'3.3.3.3','','','','',10,'空闲','','','','','','2014-04-14 17:32:05','2014-04-20 12:39:34',0),(4,2,'4.4.4.4','','','','',10,'空闲','','','','','','2014-04-15 10:24:40',NULL,0),(5,2,'5.5.5.5','','','','',10,'空闲','','','','','','2014-04-15 10:24:54',NULL,0),(6,4,'1.2.2.2','','','','',20,'空闲','','','','','','2014-04-15 10:25:03','2014-04-20 14:25:26',0),(7,4,'1.2.3.3','','','','',10,'空闲','','','','','','2014-04-15 10:25:12','2014-04-20 14:27:16',0),(8,2,'4.4.4.5','','','','',10,'空闲','','','','','','2014-04-15 10:25:21',NULL,0),(9,2,'6.6.6.6','','','','',10,'空闲','','','','','','2014-04-15 10:25:28','2014-04-20 12:29:56',0),(10,2,'1.2.3.1','','','','',10,'空闲','','','','','','2014-04-15 10:25:34',NULL,0),(11,5,'1.1.1.7','','','','',10,'空闲','','','','','','2014-04-15 10:25:42','2014-04-20 14:25:36',0),(12,2,'2.2.2.1','','','','',16,'空闲','','','','','','2014-04-15 10:26:04','2014-04-20 12:02:14',0),(13,2,'3.2.2.1','','','','',10,'空闲','','','','','','2014-04-15 10:26:12',NULL,0),(14,2,'2.3.5.1','','','','',10,'空闲','','','','','','2014-04-15 10:26:19','2014-04-20 12:43:21',0),(16,6,'8.8.8.9','','','','',10,'空闲','','','','','','2014-04-20 12:01:39','2014-04-20 14:25:45',0),(17,2,'8.9.9.9','','','','',10,'空闲','','','','','','2014-04-20 12:41:43',NULL,0);
 /*!40000 ALTER TABLE `zc_machine` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,7 +179,7 @@ CREATE TABLE `zc_service` (
 
 LOCK TABLES `zc_service` WRITE;
 /*!40000 ALTER TABLE `zc_service` DISABLE KEYS */;
-INSERT INTO `zc_service` VALUES (10,'奥运'),(11,'空闲'),(12,'其他'),(13,'uc'),(14,'mued'),(15,'宿主机'),(16,'live'),(17,'ucweb'),(18,'百度合作'),(19,'积分商城'),(20,'数据中心'),(21,'阅读'),(22,'直播'),(24,'search'),(25,'数据挖掘'),(27,'春风社'),(28,'minisite'),(30,'游戏平台'),(31,'小说和起始页'),(33,'微博wap'),(34,'白社会'),(35,'校友录'),(36,'汽车'),(37,'微博DC'),(38,'新小说'),(39,'多屏互动项目'),(40,'手搜push系统');
+INSERT INTO `zc_service` VALUES (10,'奥运'),(11,'空闲'),(12,'其他'),(13,'uc'),(14,'mued'),(15,'宿主机'),(16,'live'),(17,'ucweb'),(18,'百度合作'),(19,'积分商城'),(20,'数据中心'),(21,'阅读'),(22,'直播'),(24,'search'),(25,'数据挖掘'),(27,'春风社'),(28,'minisite'),(30,'游戏平台'),(31,'小说和起始页'),(33,'微博wap'),(36,'汽车'),(37,'微博DC'),(38,'新小说'),(39,'多屏互动项目'),(40,'手搜push系统');
 /*!40000 ALTER TABLE `zc_service` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,4 +221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-15 11:19:34
+-- Dump completed on 2014-04-20 18:04:43
