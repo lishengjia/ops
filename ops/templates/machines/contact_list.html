@@ -17,5 +17,16 @@
         </tr>
         {% end %}
 </table>
+<form action="/contactmanage" method="post">
+<table style="width:80% !important; text-align:center">
+    <tr>
+        <td>
+        负责人姓名<input type="text" name="contact_name">
+        负责人电话<input type="text" name="contact_info">
+        <input type="submit"  style="width:80px;" class='button' name="add_contact" value="添加负责人" />
+        </td>
+    </tr>
+</table>
+</form>
 </div>
 {% end %}

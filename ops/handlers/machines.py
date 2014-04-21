@@ -203,7 +203,7 @@ class AddRoom(BaseHandler):
 class ProjectManage(BaseHandler):
     @tornado.web.authenticated
     def get(self, *args, **kwargs):
-        action = self.get_argument("action")
+        action = self.get_argument("action", default="list")
         if action == "list":
             project_list = AllMachineInfo.get_project_list()
             project_list_handled = DataManage.manage_project_list(project_list)
@@ -211,13 +211,23 @@ class ProjectManage(BaseHandler):
         elif action == "delete":
             pid = self.get_argument("pid")
             AllMachineInfo.delete_project(pid)
-            self.write("<script language='javascript'>window.location.href='/projectmanage?action=list';</script>")
+            self.write("<script language='javascript'>window.location.href='/projectmanage';</script>")
+
+    @tornado.web.authenticated
+    def post(self, *args, **kwargs):
+        project_name = self.get_argument("project_name")
+        check_result = Check.project_check(project_name)
+        if check_result == "ok":
+            AllMachineInfo.set_add_project(project_name)
+            self.write("<script language='javascript'>alert('添加完成');window.location.href='/projectmanage';</script>")
+        else:
+            self.write(check_result)
 
 
 class ContactManage(BaseHandler):
     @tornado.web.authenticated
     def get(self, *args, **kwargs):
-        action = self.get_argument("action")
+        action = self.get_argument("action", default="list")
         if action == "list":
             contact_list = AllMachineInfo.get_contact_list()
             contact_list_handled = DataManage.manage_contact_list(contact_list)
@@ -226,3 +236,13 @@ class ContactManage(BaseHandler):
             cid = self.get_argument("cid")
             AllMachineInfo.delete_contact(cid)
             self.write("<script language='javascript'>window.location.href='/contactmanage?action=list';</script>")
+
+    @tornado.web.authenticated
+    def post(self, *args, **kwargs):
+        contact_info = dict(contact_name=self.get_argument("contact_name"), contact_info=self.get_argument("contact_info"))
+        check_result = Check.contact_check(contact_info)
+        if check_result == "ok":
+            AllMachineInfo.set_add_contact(contact_info)
+            self.write("<script language='javascript'>alert('添加完成');window.location.href='/contactmanage';</script>")
+        else:
+            self.write(check_result)

@@ -77,3 +77,30 @@ class Check():
                 return "ok"
         else:
             return "ok"
+
+    @staticmethod
+    def project_check(result):
+        project_check_empty = "<script language='javascript'>alert('项目名称必须填写');window.history.back(-1);</script>"
+        project_check_exist = "<script language='javascript'>alert('项目已经存在');window.history.back(-1);</script>"
+        if result.strip() == "":
+            return project_check_empty
+        else:
+            check_project_name = AllMachineInfo.add_project_check(result)
+            if check_project_name and check_project_name[0][0] == result:
+                return project_check_exist
+            else:
+                return "ok"
+
+    @staticmethod
+    def contact_check(result):
+        contact_check_empty = "<script language='javascript'>alert('负责人姓名必须填写');window.history.back(-1);</script>"
+        contact_check_exist = "<script language='javascript'>alert('负责人已经存在');window.history.back(-1);</script>"
+        if result["contact_name"].strip() == "":
+            return contact_check_empty
+        else:
+            check_contact_name = AllMachineInfo.add_contact_check(result["contact_name"])
+            if check_contact_name and check_contact_name[0][0] == result["contact_name"]:
+                return contact_check_exist
+            else:
+                return "ok"
+

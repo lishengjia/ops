@@ -36,12 +36,13 @@ class MysqlServer(object):
     def run_sql(self, sql):
         self.ensure_cursor()
         self._cursor.execute(sql)
+        #commit只对innodb生效，不加commit的话，修改数据库记录的操作不会生效。而如果是myisam引擎的话，不需要commit即可生效
+        self._conn.commit()
         return self._cursor.fetchall()
 
     def execute_sql(self, sql):
         self.ensure_cursor()
         self._cursor.execute(sql)
-        #commit只对innodb生效，不加commit的话，修改数据库记录的操作不会生效。而如果是myisam引擎的话，不需要commit即可生效
         self._conn.commit()
 
     def run_sql_fetchone(self, sql):

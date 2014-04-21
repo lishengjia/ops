@@ -213,3 +213,33 @@ class AllMachineInfo(object):
         sql = "delete from zc_contact where ccid='%d'" % int(result)
         db.execute_sql(sql)
         db.close()
+
+    @staticmethod
+    def add_project_check(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "select `sname` from zc_service where sname='%s'" % result
+        result = db.run_sql(sql)
+        db.close()
+        return result
+
+    @staticmethod
+    def set_add_project(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "insert into zc_service (sname) values ('%s')" % result
+        db.execute_sql(sql)
+        db.close()
+
+    @staticmethod
+    def add_contact_check(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "select `cname` from zc_contact where cname='%s'" % result
+        result = db.run_sql(sql)
+        db.close()
+        return result
+
+    @staticmethod
+    def set_add_contact(result):
+        db = MysqlServer(settings.DATABASES)
+        sql = "insert into zc_contact (cname,cinfo) values ('%s','%s')" % (result["contact_name"], result["contact_info"])
+        db.execute_sql(sql)
+        db.close()
