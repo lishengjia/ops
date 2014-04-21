@@ -3,7 +3,7 @@ ops
 
 ops管理平台
 
-这是一个简单的ops管理平台，使用tornado+python编写。前端html,js,css代码来自互联网，经过少量修改。后端tornado代码完全有我独立编写。
+这是一个简单的ops管理平台，使用tornado+python编写。前端html,js,css代码来自互联网，经过少量修改。后端tornado代码完全有我独立编写。目前，系统目前有资产管理和用户管理等功能。
 
 安装指南：
 
