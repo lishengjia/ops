@@ -11,7 +11,7 @@ ops管理平台
 
 2,下载代码后进行安装：
 
-\# python setup.py install
+\# python setup.py install --install-scripts=/usr/local/bin/
 
 3，第二步安装后，验证是否成功：
 运行如下命令：
